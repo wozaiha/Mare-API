@@ -11,6 +11,7 @@ namespace MareSynchronos.API
         Player = 0,
         Minion = 1,
         Companion = 2,
-        Pet = 3
+        Pet = 3,
+        Mount = 4
     }
 }

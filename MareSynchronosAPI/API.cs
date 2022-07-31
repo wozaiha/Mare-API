@@ -8,7 +8,7 @@ namespace MareSynchronos.API
 {
     public class Api
     {
-        public const int Version = 6;
+        public const int Version = 7;
         public const string Path = "/mare";
 
         public const string SendFileAbortUpload = "AbortUpload";
@@ -16,7 +16,6 @@ namespace MareSynchronos.API
         public const string InvokeFileIsUploadFinished = "IsUploadFinished";
         public const string SendFileUploadFileStreamAsync = "UploadFileStreamAsync";
         public const string InvokeFileGetFileSize = "GetFileSize";
-        public const string StreamFileDownloadFileAsync = "StreamDownloadFileAsync";
         public const string SendFileDeleteAllFiles = "DeleteAllFiles";
 
         public const string InvokeHeartbeat = "Heartbeat";

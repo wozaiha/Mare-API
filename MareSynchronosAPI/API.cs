@@ -8,7 +8,7 @@ namespace MareSynchronos.API
 {
     public class Api
     {
-        public const int Version = 7;
+        public const int Version = 8;
         public const string Path = "/mare";
 
         public const string SendFileAbortUpload = "AbortUpload";
@@ -37,8 +37,6 @@ namespace MareSynchronos.API
         public const string OnAdminUpdateOrAddForbiddenFile = "OnUpdateOrAddForbiddenFile";
         public const string OnAdminDeleteForbiddenFile = "OnDeleteForbiddenFile";
 
-        public const string InvokeUserGetOnlineUsers = "GetOnlineUsers";
-        public const string InvokeUserRegister = "Register";
         public const string InvokeUserPushCharacterDataToVisibleClients = "PushCharacterDataToVisibleClients";
         public const string InvokeUserGetOnlineCharacters = "GetOnlineCharacters";
         public const string SendUserPairedClientAddition = "SendPairedClientAddition";

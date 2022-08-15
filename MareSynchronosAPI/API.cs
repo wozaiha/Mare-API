@@ -8,7 +8,7 @@ namespace MareSynchronos.API
 {
     public class Api
     {
-        public const int Version = 9;
+        public const int Version = 10;
         public const string Path = "/mare";
 
         public const string SendFileAbortUpload = "AbortUpload";

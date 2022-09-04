@@ -9,6 +9,8 @@ namespace MareSynchronos.API
         public string[] GamePaths { get; set; } = Array.Empty<string>();
         public string Hash { get; set; }
 
+        public string FileSwapPath { get; set; } = string.Empty;
+
         public override bool Equals(object? otherObj)
         {
             if (otherObj == null || otherObj is not FileReplacementDto other) return false;
@@ -17,7 +19,7 @@ namespace MareSynchronos.API
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(GetOrderIndependentHashCode(GamePaths), Hash);
+            return HashCode.Combine(GetOrderIndependentHashCode(GamePaths), Hash, FileSwapPath);
         }
 
         public static int GetOrderIndependentHashCode<T>(IEnumerable<T> source)
@@ -33,7 +35,7 @@ namespace MareSynchronos.API
 
         public override string ToString()
         {
-            return Hash + ":" + string.Join(",", GamePaths);
+            return Hash + ":" + string.Join(",", GamePaths) + "(" + FileSwapPath + ")";
         }
     }
 }

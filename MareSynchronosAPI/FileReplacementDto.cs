@@ -14,7 +14,7 @@ namespace MareSynchronos.API
         public override bool Equals(object? otherObj)
         {
             if (otherObj == null || otherObj is not FileReplacementDto other) return false;
-            return Hash == other.Hash && Enumerable.SequenceEqual(GamePaths, other.GamePaths);
+            return Hash == other.Hash && Enumerable.SequenceEqual(GamePaths, other.GamePaths) && FileSwapPath == other.FileSwapPath;
         }
 
         public override int GetHashCode()

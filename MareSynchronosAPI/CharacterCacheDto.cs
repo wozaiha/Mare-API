@@ -16,6 +16,8 @@ namespace MareSynchronos.API
                 + string.Join(Environment.NewLine, FileReplacements.Select(g => g.Key + Environment.NewLine + string.Join(Environment.NewLine, g.Value)));
         }
 
+        public float HeelsOffset { get; set; } = 0.0f;
+
         public static int GetOrderIndependentHashCode<T>(IEnumerable<T> source)
         {
             int hash = 0;
@@ -44,7 +46,7 @@ namespace MareSynchronos.API
                 glamourerHash = unchecked(glamourerHash + item.Value.GetHashCode());
             }
 
-            return HashCode.Combine(fileReplacementsHash, glamourerHash, ManipulationData);
+            return HashCode.Combine(fileReplacementsHash, glamourerHash, ManipulationData, HeelsOffset);
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class Api
     {
-        public const int Version = 13;
+        public const int Version = 14;
         public const string Path = "/mare";
 
         public const string SendFileAbortUpload = "AbortUpload";

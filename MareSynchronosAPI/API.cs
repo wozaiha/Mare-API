@@ -2,7 +2,7 @@
 {
     public class Api
     {
-        public const int Version = 14;
+        public const int Version = 15;
         public const string Path = "/mare";
 
         public const string SendFileAbortUpload = "AbortUpload";
@@ -42,5 +42,20 @@
         public const string OnUserReceiveCharacterData = "ReceiveCharacterData";
         public const string OnUserRemoveOnlinePairedPlayer = "RemoveOnlinePairedPlayer";
         public const string OnUserAddOnlinePairedPlayer = "AddOnlinePairedPlayer";
+
+        public const string InvokeGroupChangePassword = "GroupChangePassword";
+        public const string InvokeGroupCreate = "CreateGroup";
+        public const string InvokeGroupGetGroups = "GetGroups";
+        public const string InvokeGroupGetUsersInGroup = "GetUsersInGroup";
+        public const string SendGroupChangeInviteState = "GroupChangeInviteState";
+        public const string SendGroupDelete = "DeleteGroup";
+        public const string SendGroupJoin = "JoinGroup";
+        public const string SendGroupLeave = "LeaveGroup";
+        public const string SendGroupPause = "PauseGroup";
+        public const string SendGroupRemoveUser = "RemoveUserFromGroup";
+        public const string SendGroupChangeOwner = "ChangeOwnerOfGroup";
+
+        public const string OnGroupChange = "OnGroupPushChange";
+        public const string OnGroupUserChange = "OnGroupUserChange";
     }
 }

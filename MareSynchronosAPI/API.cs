@@ -49,7 +49,7 @@
         public const string InvokeGroupGetUsersInGroup = "GetUsersInGroup";
         public const string SendGroupChangeInviteState = "GroupChangeInviteState";
         public const string SendGroupDelete = "DeleteGroup";
-        public const string SendGroupJoin = "JoinGroup";
+        public const string InvokeGroupJoin = "JoinGroup";
         public const string SendGroupLeave = "LeaveGroup";
         public const string SendGroupPause = "PauseGroup";
         public const string SendGroupRemoveUser = "RemoveUserFromGroup";

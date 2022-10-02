@@ -55,6 +55,7 @@
         public const string SendGroupRemoveUser = "RemoveUserFromGroup";
         public const string SendGroupChangeOwner = "ChangeOwnerOfGroup";
         public const string SendGroupChangePinned = "ChangedPinnedUserInGroup";
+        public const string SendGroupClear = "ClearGroup";
 
         public const string OnGroupChange = "OnGroupPushChange";
         public const string OnGroupUserChange = "OnGroupUserChange";

@@ -7,5 +7,6 @@
         public string? UserAlias { get; set; }
         public bool? IsPaused { get; set; }
         public bool? IsRemoved { get; set; }
+        public bool? IsPinned { get; set; }
     }
 }

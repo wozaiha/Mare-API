@@ -11,6 +11,7 @@
         public const string SendFileUploadFileStreamAsync = "UploadFileStreamAsync";
         public const string InvokeGetFilesSizes = "GetFilesSizes";
         public const string SendFileDeleteAllFiles = "DeleteAllFiles";
+        public const string InvokeCheckClientHealth = "CheckClientHealth";
 
         public const string InvokeHeartbeat = "Heartbeat";
         public const string OnUpdateSystemInfo = "OnUpdateSystemInfo";

@@ -7,5 +7,8 @@
         public bool IsModerator { get; set; }
         public string UID { get; set; }
         public string ShardName { get; set; }
+        public int MaxGroupUserCount { get; set; }
+        public int MaxGroupsCreatedByUser { get; set; }
+        public int MaxGroupsJoinedByUser { get; set; }
     }
 }

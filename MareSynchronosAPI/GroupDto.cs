@@ -8,5 +8,6 @@
         public bool? IsPaused { get; set; }
         public bool? IsDeleted { get; set; }
         public string? Alias { get; set; }
+        public bool? IsModerator { get; set; }
     }
 }

@@ -9,11 +9,13 @@ namespace MareSynchronos.API
         public Dictionary<ObjectKind, List<FileReplacementDto>> FileReplacements { get; set; } = new();
         public Dictionary<ObjectKind, string> GlamourerData { get; set; } = new();
         public string ManipulationData { get; set; } = string.Empty;
+        public string CustomizePlusData { get; set; } = string.Empty;
         public override string ToString()
         {
             return GetHashCode() + Environment.NewLine + "Manip:" + ManipulationData + Environment.NewLine
                 + string.Join(Environment.NewLine, GlamourerData.Select(g => g.Key + ":" + g.Value)) + Environment.NewLine
-                + string.Join(Environment.NewLine, FileReplacements.Select(g => g.Key + Environment.NewLine + string.Join(Environment.NewLine, g.Value)));
+                + string.Join(Environment.NewLine, FileReplacements.Select(g => g.Key + Environment.NewLine + string.Join(Environment.NewLine, g.Value)))
+                + Environment.NewLine + "CustomizePlus:" + CustomizePlusData;
         }
 
         public float HeelsOffset { get; set; } = 0.0f;
@@ -46,7 +48,7 @@ namespace MareSynchronos.API
                 glamourerHash = unchecked(glamourerHash + item.Value.GetHashCode());
             }
 
-            return HashCode.Combine(fileReplacementsHash, glamourerHash, ManipulationData, HeelsOffset);
+            return HashCode.Combine(fileReplacementsHash, glamourerHash, ManipulationData, HeelsOffset, CustomizePlusData);
         }
     }
 }

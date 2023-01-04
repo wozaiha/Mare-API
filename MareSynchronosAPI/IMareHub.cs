@@ -4,15 +4,23 @@ using System.Threading.Tasks;
 
 namespace MareSynchronos.API
 {
+    public enum MessageSeverity
+    {
+        Information,
+        Warning,
+        Error
+    }
+
     public class MareAuth
     {
         public const string Auth = "/auth";
         public const string AuthCreate = "create";
-        public static string AuthFullPath = Auth + "/" + AuthCreate;
+        public const string AuthCreateIdent = "createWithIdent";
+        public static string AuthFullPath = Auth + "/" + AuthCreateIdent;
     }
     public interface IMareHub
     {
-        const int ApiVersion = 16;
+        const int ApiVersion = 17;
         const string Path = "/mare";
 
         Task FilesAbortUpload();
@@ -45,6 +53,9 @@ namespace MareSynchronos.API
         Task GroupRemoveUser(string gid, string uid);
         Task GroupUnbanUser(string gid, string uid);
         Task<List<string>> GroupCreateTempInvite(string gid, int amount);
+        Task<ConnectionDto> GetConnectionDto();
+        [Obsolete]
+
         Task<ConnectionDto> Heartbeat(string characterIdentification);
         Task<bool> FilesIsUploadFinished();
         Task UserPushData(CharacterCacheDto characterCache, List<string> visibleCharacterIds);
@@ -67,6 +78,7 @@ namespace MareSynchronos.API
         Task Client_AdminDeleteForbiddenFile(ForbiddenFileDto dto);
         Task Client_AdminUpdateOrAddBannedUser(BannedUserDto dto);
         Task Client_AdminUpdateOrAddForbiddenFile(ForbiddenFileDto dto);
+        Task Client_ReceiveServerMessage(MessageSeverity messageSeverity, string message);
     }
 
     public interface IMareHubClient : IMareHub
@@ -82,5 +94,6 @@ namespace MareSynchronos.API
         void OnAdminDeleteForbiddenFile(Action<ForbiddenFileDto> act);
         void OnAdminUpdateOrAddBannedUser(Action<BannedUserDto> dto);
         void OnAdminUpdateOrAddForbiddenFile(Action<ForbiddenFileDto> dto);
+        void OnReceiveServerMessage(Action<MessageSeverity, string> act);
     }
 }

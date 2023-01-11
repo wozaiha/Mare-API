@@ -10,17 +10,9 @@ namespace MareSynchronos.API
         Warning,
         Error
     }
-
-    public class MareAuth
-    {
-        public const string Auth = "/auth";
-        public const string AuthCreate = "create";
-        public const string AuthCreateIdent = "createWithIdent";
-        public static string AuthFullPath = Auth + "/" + AuthCreateIdent;
-    }
     public interface IMareHub
     {
-        const int ApiVersion = 17;
+        const int ApiVersion = 18;
         const string Path = "/mare";
 
         Task FilesAbortUpload();

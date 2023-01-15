@@ -12,7 +12,7 @@ namespace MareSynchronos.API
     }
     public interface IMareHub
     {
-        const int ApiVersion = 18;
+        const int ApiVersion = 19;
         const string Path = "/mare";
 
         Task FilesAbortUpload();

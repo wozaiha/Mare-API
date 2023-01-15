@@ -12,7 +12,7 @@ namespace MareSynchronos.API
     }
     public interface IMareHub
     {
-        const int ApiVersion = 19;
+        const int ApiVersion = 20;
         const string Path = "/mare";
 
         Task FilesAbortUpload();
@@ -46,9 +46,6 @@ namespace MareSynchronos.API
         Task GroupUnbanUser(string gid, string uid);
         Task<List<string>> GroupCreateTempInvite(string gid, int amount);
         Task<ConnectionDto> GetConnectionDto();
-        [Obsolete]
-
-        Task<ConnectionDto> Heartbeat(string characterIdentification);
         Task<bool> FilesIsUploadFinished();
         Task UserPushData(CharacterCacheDto characterCache, List<string> visibleCharacterIds);
         Task<List<UploadFileDto>> FilesSend(List<string> fileListHashes);
@@ -71,6 +68,7 @@ namespace MareSynchronos.API
         Task Client_AdminUpdateOrAddBannedUser(BannedUserDto dto);
         Task Client_AdminUpdateOrAddForbiddenFile(ForbiddenFileDto dto);
         Task Client_ReceiveServerMessage(MessageSeverity messageSeverity, string message);
+        Task Client_DownloadReady(Guid requestId);
     }
 
     public interface IMareHubClient : IMareHub
@@ -87,5 +85,6 @@ namespace MareSynchronos.API
         void OnAdminUpdateOrAddBannedUser(Action<BannedUserDto> dto);
         void OnAdminUpdateOrAddForbiddenFile(Action<ForbiddenFileDto> dto);
         void OnReceiveServerMessage(Action<MessageSeverity, string> act);
+        void OnDownloadReady(Action<Guid> act);
     }
 }

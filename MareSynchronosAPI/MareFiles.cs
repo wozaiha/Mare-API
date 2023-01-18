@@ -16,9 +16,11 @@ namespace MareSynchronos.API
         public const string Request_Enqueue = "enqueue";
         public const string Request_RequestFile = "file";
         public const string Request_Cancel = "cancel";
+        public const string Request_Check = "check";
 
         public static Uri RequestEnqueueFullPath(Uri baseUri) => new(baseUri, Request + "/" + Request_Enqueue);
         public static Uri RequestRequestFileFullPath(Uri baseUri, string hash) => new(baseUri, Request + "/" + Request_RequestFile + "?file=" + hash);
         public static Uri RequestCancelFullPath(Uri baseUri, Guid guid) => new Uri(baseUri, Request + "/" + Request_Cancel + "?requestId=" + guid.ToString());
+        public static Uri RequestCheckQueue(Uri baseUri, Guid guid) => new Uri(baseUri, Request + "/" + Request_Check + "?requestId=" + guid.ToString());
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MareSynchronos.API
+namespace MareSynchronos.API.Routes
 {
     public class MareFiles
     {

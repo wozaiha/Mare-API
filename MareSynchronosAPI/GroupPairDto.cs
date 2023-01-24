@@ -9,5 +9,7 @@
         public bool? IsRemoved { get; set; }
         public bool? IsPinned { get; set; }
         public bool? IsModerator { get; set; }
+        public bool? DisableAnimations { get; set; }
+        public bool? DisableSounds { get; set; }
     }
 }

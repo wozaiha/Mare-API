@@ -12,7 +12,7 @@ namespace MareSynchronos.API
     }
     public interface IMareHub
     {
-        const int ApiVersion = 20;
+        const int ApiVersion = 21;
         const string Path = "/mare";
 
         Task FilesAbortUpload();
@@ -44,6 +44,8 @@ namespace MareSynchronos.API
         Task GroupLeave(string gid);
         Task GroupRemoveUser(string gid, string uid);
         Task GroupUnbanUser(string gid, string uid);
+        Task GroupIndividualChangePermissionState(string gid, GroupPermissionDto dto);
+        Task GroupChangePermissionState(string gid, GroupPermissionDto dto);
         Task<List<string>> GroupCreateTempInvite(string gid, int amount);
         Task<ConnectionDto> GetConnectionDto();
         Task<bool> FilesIsUploadFinished();
@@ -58,8 +60,8 @@ namespace MareSynchronos.API
         Task FilesUploadStreamAsync(string hash, IAsyncEnumerable<byte[]> fileContent);
         Task Client_UserUpdateClientPairs(ClientPairDto clientPairDto);
         Task Client_UpdateSystemInfo(SystemInfoDto systemInfo);
-        Task Client_UserReceiveCharacterData(CharacterCacheDto clientPairDto, string characterIdent);
-        Task Client_UserChangePairedPlayer(string characterIdent, bool isOnline);
+        Task Client_UserReceiveCharacterData(CharacterCacheDto clientPairDto, string uid);
+        Task Client_UserChangePairedPlayer(CharacterDto dto);
         Task Client_GroupChange(GroupDto groupDto);
         Task Client_GroupUserChange(GroupPairDto groupPairDto);
         Task Client_AdminForcedReconnect();

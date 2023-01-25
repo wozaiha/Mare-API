@@ -2,5 +2,16 @@
 
 namespace MareSynchronos.API.Dto.Group;
 
-public record GroupFullInfoDto(GroupData Group, UserData Owner, GroupPermissions GroupPermissions,
-    GroupUserPermissions OwnPermissions, GroupUserInfo GroupUserInfo) : GroupDto(Group);
+public record GroupFullInfoDto : GroupInfoDto
+{
+    public GroupFullInfoDto(GroupData group, UserData owner, GroupPermissions groupPermissions, GroupUserPermissions groupUserPermissions, GroupUserInfo groupUserInfo) : base(group, owner, groupPermissions)
+    {
+        Owner = owner;
+        GroupPermissions = groupPermissions;
+        GroupUserPermissions = groupUserPermissions;
+        GroupUserInfo = groupUserInfo;
+    }
+
+    public GroupUserPermissions GroupUserPermissions { get; set; }
+    public GroupUserInfo GroupUserInfo { get; set; }
+}

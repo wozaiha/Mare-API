@@ -86,8 +86,6 @@ namespace MareSynchronos.API.Routes
         void OnUpdateSystemInfo(Action<SystemInfoDto> act);
         void OnUserReceiveCharacterData(Action<CharacterCacheDto, string> act);
         void OnUserChangePairedPlayer(Action<string, bool> act);
-        void OnGroupChange(Action<GroupFullInfoDto> act);
-        void OnGroupUserChange(Action<GroupPairDto> act);
         void OnAdminForcedReconnect(Action act);
         void OnAdminDeleteBannedUser(Action<BannedUserDto> dto);
         void OnAdminDeleteForbiddenFile(Action<ForbiddenFileDto> act);
@@ -95,5 +93,14 @@ namespace MareSynchronos.API.Routes
         void OnAdminUpdateOrAddForbiddenFile(Action<ForbiddenFileDto> dto);
         void OnReceiveServerMessage(Action<MessageSeverity, string> act);
         void OnDownloadReady(Action<Guid> act);
+
+        void OnGroupSendFullInfo(Action<GroupFullInfoDto> act);
+        void OnGroupSendInfo(Action<GroupInfoDto> act);
+        void OnGroupDelete(Action<GroupDto> act);
+        void OnGroupPairJoined(Action<GroupPairFullInfoDto> act);
+        void OnGroupPairLeft(Action<GroupPairDto> act);
+        void OnGroupChangePermissions(Action<GroupPermissionDto> act);
+        void OnGroupPairChangePermissions(Action<GroupPairUserPermissionDto> act);
+        void OnGroupPairChangeUserInfo(Action<GroupPairUserInfoDto> act);
     }
 }

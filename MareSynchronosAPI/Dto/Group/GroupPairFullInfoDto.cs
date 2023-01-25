@@ -1,15 +1,10 @@
-﻿using MareSynchronos.API.Dto.User;
+﻿using MareSynchronos.API.Data;
+using MareSynchronos.API.Data.Enum;
 
 namespace MareSynchronos.API.Dto.Group;
 
-public record GroupPairFullInfoDto : GroupPairDto
+public record GroupPairFullInfoDto(GroupData Group, UserData User, GroupUserInfo GroupPairStatusInfo, GroupUserPermissions GroupUserPermissions) : GroupPairDto(Group, User)
 {
-    public GroupPairFullInfoDto(GroupData group, UserData user, GroupUserInfo groupPairStatusInfo, GroupUserPermissions groupUserPermissions) : base(group, user)
-    {
-        GroupPairStatusInfo = groupPairStatusInfo;
-        GroupUserPermissions = groupUserPermissions;
-    }
-
-    public GroupUserInfo GroupPairStatusInfo { get; set; }
-    public GroupUserPermissions GroupUserPermissions { get; set; }
+    public GroupUserInfo GroupPairStatusInfo { get; set; } = GroupPairStatusInfo;
+    public GroupUserPermissions GroupUserPermissions { get; set; } = GroupUserPermissions;
 }

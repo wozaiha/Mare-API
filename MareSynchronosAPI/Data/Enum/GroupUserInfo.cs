@@ -1,5 +1,8 @@
-﻿namespace MareSynchronos.API.Dto.Group;
+﻿using System;
 
+namespace MareSynchronos.API.Data;
+
+[Flags]
 public enum GroupUserInfo
 {
     None = 0x0,

@@ -1,4 +1,4 @@
-﻿namespace MareSynchronos.API
+﻿namespace MareSynchronos.API.Dto
 {
     public record SystemInfoDto
     {

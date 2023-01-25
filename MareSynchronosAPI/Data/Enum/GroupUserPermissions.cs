@@ -1,5 +1,9 @@
-﻿namespace MareSynchronos.API.Dto.Group;
+﻿using System;
+using MareSynchronos.API.Data;
 
+namespace MareSynchronos.API.Data.Enum;
+
+[Flags]
 public enum GroupUserPermissions
 {
     NoneSet = 0x0,

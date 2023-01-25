@@ -1,4 +1,6 @@
-﻿namespace MareSynchronos.API
+﻿using MareSynchronos.API.Dto.Files;
+
+namespace MareSynchronos.API
 {
     public record UploadFileDto : ITransferFileDto
     {

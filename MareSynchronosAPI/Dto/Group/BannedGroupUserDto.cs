@@ -1,4 +1,4 @@
-﻿using MareSynchronos.API.Dto.User;
+﻿using MareSynchronos.API.Data;
 using System;
 
 namespace MareSynchronos.API.Dto.Group

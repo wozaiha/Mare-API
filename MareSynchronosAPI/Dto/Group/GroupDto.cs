@@ -1,15 +1,11 @@
-﻿namespace MareSynchronos.API.Dto.Group;
+﻿using MareSynchronos.API.Data;
 
-public record GroupDto
+namespace MareSynchronos.API.Dto.Group;
+
+public record GroupDto(GroupData Group)
 {
-    public GroupDto(GroupData group)
-    {
-        Group = group;
-    }
-
-    public GroupData Group { get; set; }
+    public GroupData Group { get; set; } = Group;
     public string GID => Group.GID;
     public string? GroupAlias => Group.Alias;
-    public string GroupAliasOrGID => GroupAlias ?? GID;
+    public string GroupAliasOrGID => Group.AliasOrGID;
 }
-

@@ -1,4 +1,5 @@
-﻿using MareSynchronos.API.Dto.User;
+﻿using MareSynchronos.API.Data;
+using MareSynchronos.API.Data.Enum;
 
 namespace MareSynchronos.API.Dto.Group;
 

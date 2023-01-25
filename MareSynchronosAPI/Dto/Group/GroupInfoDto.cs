@@ -1,19 +1,14 @@
-﻿using MareSynchronos.API.Dto.User;
+﻿using MareSynchronos.API.Data;
+using MareSynchronos.API.Data.Enum;
 
 namespace MareSynchronos.API.Dto.Group;
 
-public record GroupInfoDto : GroupDto
+public record GroupInfoDto(GroupData Group, UserData Owner, GroupPermissions GroupPermissions) : GroupDto(Group)
 {
-    public GroupInfoDto(GroupData group, UserData owner, GroupPermissions groupPermissions) : base(group)
-    {
-        Owner = owner;
-        GroupPermissions = groupPermissions;
-    }
+    public GroupPermissions GroupPermissions { get; set; } = GroupPermissions;
+    public UserData Owner { get; set; } = Owner;
 
     public string OwnerUID => Owner.UID;
     public string? OwnerAlias => Owner.Alias;
-    public string OwnerAliasOrUID => OwnerAlias ?? OwnerUID;
-
-    public GroupPermissions GroupPermissions { get; set; }
-    public UserData Owner { get; set; }
+    public string OwnerAliasOrUID => Owner.AliasOrUID;
 }

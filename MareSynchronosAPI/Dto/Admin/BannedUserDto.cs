@@ -1,4 +1,4 @@
-﻿namespace MareSynchronos.API
+﻿namespace MareSynchronos.API.Dto.Admin
 {
     public record BannedUserDto
     {

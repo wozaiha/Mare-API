@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace MareSynchronos.API.Data;
+﻿namespace MareSynchronos.API.Data;
 
 public class FileReplacementData : HashableDataBase
 {

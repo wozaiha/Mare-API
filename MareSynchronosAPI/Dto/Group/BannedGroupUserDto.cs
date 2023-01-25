@@ -1,19 +1,17 @@
 ﻿using MareSynchronos.API.Data;
-using System;
 
-namespace MareSynchronos.API.Dto.Group
+namespace MareSynchronos.API.Dto.Group;
+
+public record BannedGroupUserDto : GroupPairDto
 {
-    public record BannedGroupUserDto : GroupPairDto
+    public BannedGroupUserDto(GroupData group, UserData user, string reason, DateTime bannedOn, string bannedBy) : base(group, user)
     {
-        public BannedGroupUserDto(GroupData group, UserData user, string reason, DateTime bannedOn, string bannedBy) : base(group, user)
-        {
-            Reason = reason;
-            BannedOn = bannedOn;
-            BannedBy = bannedBy;
-        }
-
-        public string Reason { get; set; }
-        public DateTime BannedOn { get; set; }
-        public string BannedBy { get; set; }
+        Reason = reason;
+        BannedOn = bannedOn;
+        BannedBy = bannedBy;
     }
+
+    public string Reason { get; set; }
+    public DateTime BannedOn { get; set; }
+    public string BannedBy { get; set; }
 }

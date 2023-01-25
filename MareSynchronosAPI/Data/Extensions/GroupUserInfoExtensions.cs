@@ -1,4 +1,6 @@
-﻿namespace MareSynchronos.API.Data.Extensions;
+﻿using MareSynchronos.API.Data.Enum;
+
+namespace MareSynchronos.API.Data.Extensions;
 
 public static class GroupUserInfoExtensions
 {

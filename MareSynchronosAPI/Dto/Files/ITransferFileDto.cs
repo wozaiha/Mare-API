@@ -1,9 +1,8 @@
-﻿namespace MareSynchronos.API.Dto.Files
+﻿namespace MareSynchronos.API.Dto.Files;
+
+public interface ITransferFileDto
 {
-    public interface ITransferFileDto
-    {
-        string Hash { get; set; }
-        bool IsForbidden { get; set; }
-        string ForbiddenBy { get; set; }
-    }
+    string Hash { get; set; }
+    bool IsForbidden { get; set; }
+    string ForbiddenBy { get; set; }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using MareSynchronos.API.Data.Enum;
+﻿using MareSynchronos.API.Data.Enum;
 
 namespace MareSynchronos.API.Data;
 

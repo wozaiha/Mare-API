@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using MareSynchronos.API.Dto.Group;
-using MareSynchronos.API.Dto.User;
+﻿using MareSynchronos.API.Dto.Group;
 
 namespace MareSynchronos.API.Data.Comparer;
 

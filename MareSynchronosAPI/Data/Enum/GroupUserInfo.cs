@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MareSynchronos.API.Data;
+﻿namespace MareSynchronos.API.Data.Enum;
 
 [Flags]
 public enum GroupUserInfo

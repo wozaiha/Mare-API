@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using MareSynchronos.API.Data;
+﻿using MareSynchronos.API.Data;
 
 namespace MareSynchronos.API.Dto.User;
 

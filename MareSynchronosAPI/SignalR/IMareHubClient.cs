@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using MareSynchronos.API.Data.Enum;
+﻿using MareSynchronos.API.Data.Enum;
 using MareSynchronos.API.Dto;
 using MareSynchronos.API.Dto.Admin;
+using MareSynchronos.API.Dto.Files;
 using MareSynchronos.API.Dto.Group;
 using MareSynchronos.API.Dto.User;
 

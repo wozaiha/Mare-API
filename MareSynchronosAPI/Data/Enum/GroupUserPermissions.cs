@@ -1,7 +1,4 @@
-﻿using System;
-using MareSynchronos.API.Data;
-
-namespace MareSynchronos.API.Data.Enum;
+﻿namespace MareSynchronos.API.Data.Enum;
 
 [Flags]
 public enum GroupUserPermissions

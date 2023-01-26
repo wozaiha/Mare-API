@@ -17,12 +17,12 @@ public static class UserPermissionsExtensions
     public static void SetPaired(this ref UserPermissions perm, bool paired)
     {
         if (paired) perm |= UserPermissions.Paired;
-        perm &= ~UserPermissions.Paired;
+        else perm &= ~UserPermissions.Paired;
     }
 
     public static void SetPaused(this ref UserPermissions perm, bool paused)
     {
         if (paused) perm |= UserPermissions.Paused;
-        perm &= ~UserPermissions.Paused;
+        else perm &= ~UserPermissions.Paused;
     }
 }

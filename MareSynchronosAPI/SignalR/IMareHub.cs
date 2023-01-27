@@ -1,6 +1,5 @@
 ﻿using MareSynchronos.API.Data.Enum;
 using MareSynchronos.API.Dto;
-using MareSynchronos.API.Dto.Admin;
 using MareSynchronos.API.Dto.Group;
 using MareSynchronos.API.Dto.User;
 using MareSynchronos.API.Dto.Files;
@@ -14,15 +13,6 @@ public interface IMareHub
 
     Task<ConnectionDto> GetConnectionDto();
     Task<bool> CheckClientHealth();
-
-    Task<List<OnlineUserDto>> AdminGetOnlineUsers();
-    Task AdminChangeModeratorStatus(string uid, bool isModerator);
-    Task AdminDeleteBannedUser(BannedUserDto dto);
-    Task AdminDeleteForbiddenFile(ForbiddenFileDto dto);
-    Task<List<BannedUserDto>> AdminGetBannedUsers();
-    Task<List<ForbiddenFileDto>> AdminGetForbiddenFiles();
-    Task AdminUpdateOrAddBannedUser(BannedUserDto dto);
-    Task AdminUpdateOrAddForbiddenFile(ForbiddenFileDto dto);
 
     Task<List<DownloadFileDto>> FilesGetSizes(List<string> hashes);
     Task FilesAbortUpload();
@@ -69,13 +59,6 @@ public interface IMareHub
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
     Task Client_UserUpdateOtherPairPermissions(UserPermissionsDto dto);
     Task Client_UserReceiveCharacterData(OnlineUserCharaDataDto dataDto);
-
-    Task Client_AdminForcedReconnect();
-    Task Client_AdminDeleteBannedUser(BannedUserDto dto);
-    Task Client_AdminDeleteForbiddenFile(ForbiddenFileDto dto);
-    Task Client_AdminUpdateOrAddBannedUser(BannedUserDto dto);
-    Task Client_AdminUpdateOrAddForbiddenFile(ForbiddenFileDto dto);
-
 
     Task Client_GroupSendFullInfo(GroupFullInfoDto groupInfo);
     Task Client_GroupSendInfo(GroupInfoDto groupInfo);

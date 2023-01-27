@@ -1,6 +1,5 @@
 ﻿using MareSynchronos.API.Data.Enum;
 using MareSynchronos.API.Dto;
-using MareSynchronos.API.Dto.Admin;
 using MareSynchronos.API.Dto.Files;
 using MareSynchronos.API.Dto.Group;
 using MareSynchronos.API.Dto.User;
@@ -12,12 +11,6 @@ public interface IMareHubClient : IMareHub
     void OnUpdateSystemInfo(Action<SystemInfoDto> act);
     void OnReceiveServerMessage(Action<MessageSeverity, string> act);
     void OnDownloadReady(Action<Guid> act);
-
-    void OnAdminForcedReconnect(Action act);
-    void OnAdminDeleteBannedUser(Action<BannedUserDto> act);
-    void OnAdminDeleteForbiddenFile(Action<ForbiddenFileDto> act);
-    void OnAdminUpdateOrAddBannedUser(Action<BannedUserDto> act);
-    void OnAdminUpdateOrAddForbiddenFile(Action<ForbiddenFileDto> act);
 
     void OnUserSendOnline(Action<OnlineUserIdentDto> act);
     void OnUserSendOffline(Action<UserDto> act);

@@ -4,6 +4,9 @@ namespace MareSynchronos.API.Data.Comparer;
 
 public class GroupPairDtoComparer : IEqualityComparer<GroupPairDto>
 {
+    public static GroupPairDtoComparer Instance => _instance;
+    private static GroupPairDtoComparer _instance = new();
+    private GroupPairDtoComparer() { }
     public bool Equals(GroupPairDto? x, GroupPairDto? y)
     {
         if (x == null || y == null) return false;

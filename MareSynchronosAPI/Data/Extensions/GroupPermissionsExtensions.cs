@@ -19,21 +19,21 @@ public static class GroupPermissionsExtensions
         return perm.HasFlag(GroupPermissions.DisableInvites);
     }
 
-    public static void SetDisableAnimations(this ref GroupPermissions perm, bool disable)
+    public static void SetDisableAnimations(this ref GroupPermissions perm, bool set)
     {
-        if (disable) perm &= ~GroupPermissions.DisableAnimations;
-        else perm |= GroupPermissions.DisableAnimations;
+        if (set) perm |= GroupPermissions.DisableAnimations;
+        else perm &= ~GroupPermissions.DisableAnimations;
     }
 
-    public static void SetDisableSounds(this ref GroupPermissions perm, bool disable)
+    public static void SetDisableSounds(this ref GroupPermissions perm, bool set)
     {
-        if (disable) perm &= ~GroupPermissions.DisableSounds;
-        else perm |= GroupPermissions.DisableSounds;
+        if (set) perm |= GroupPermissions.DisableSounds;
+        else perm &= ~GroupPermissions.DisableSounds;
     }
 
-    public static void SetDisableInvites(this ref GroupPermissions perm, bool disable)
+    public static void SetDisableInvites(this ref GroupPermissions perm, bool set)
     {
-        if (disable) perm &= ~GroupPermissions.DisableInvites;
-        else perm |= GroupPermissions.DisableInvites;
+        if (set) perm |= GroupPermissions.DisableInvites;
+        else perm &= ~GroupPermissions.DisableInvites;
     }
 }

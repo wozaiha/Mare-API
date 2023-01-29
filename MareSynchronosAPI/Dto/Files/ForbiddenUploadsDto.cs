@@ -2,6 +2,6 @@
 
 public record ForbiddenFileDto
 {
-    public string Hash { get; set; }
-    public string ForbiddenBy { get; set; }
+    public string Hash { get; set; } = string.Empty;
+    public string ForbiddenBy { get; set; } = string.Empty;
 }

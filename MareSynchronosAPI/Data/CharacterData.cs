@@ -1,7 +1,9 @@
 ﻿using MareSynchronos.API.Data.Enum;
+using MessagePack;
 
 namespace MareSynchronos.API.Data;
 
+[MessagePackObject(keyAsPropertyName: true)]
 public class CharacterData : HashableDataBase
 {
     public Dictionary<ObjectKind, List<FileReplacementData>> FileReplacements { get; set; } = new();

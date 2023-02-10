@@ -1,7 +1,9 @@
 ﻿using MareSynchronos.API.Data;
+using MessagePack;
 
 namespace MareSynchronos.API.Dto.Group;
 
+[MessagePackObject(keyAsPropertyName: true)]
 public record BannedGroupUserDto : GroupPairDto
 {
     public BannedGroupUserDto(GroupData group, UserData user, string reason, DateTime bannedOn, string bannedBy) : base(group, user)

@@ -1,5 +1,8 @@
-﻿namespace MareSynchronos.API.Dto.Files;
+﻿using MessagePack;
 
+namespace MareSynchronos.API.Dto.Files;
+
+[MessagePackObject(keyAsPropertyName: true)]
 public record DownloadFileDto : ITransferFileDto
 {
     public bool FileExists { get; set; } = true;

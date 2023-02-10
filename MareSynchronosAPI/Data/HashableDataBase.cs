@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using MessagePack;
 using Newtonsoft.Json;
 
 namespace MareSynchronos.API.Data;

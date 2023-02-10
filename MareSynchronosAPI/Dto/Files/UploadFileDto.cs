@@ -1,5 +1,8 @@
-﻿namespace MareSynchronos.API.Dto.Files;
+﻿using MessagePack;
 
+namespace MareSynchronos.API.Dto.Files;
+
+[MessagePackObject(keyAsPropertyName: true)]
 public record UploadFileDto : ITransferFileDto
 {
     public string Hash { get; set; } = string.Empty;

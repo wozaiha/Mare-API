@@ -1,6 +1,10 @@
-﻿namespace MareSynchronos.API.Data;
+﻿using MessagePack;
 
+namespace MareSynchronos.API.Data;
+
+[MessagePackObject(keyAsPropertyName: true)]
 public record GroupData(string GID, string? Alias = null)
 {
-    public string AliasOrGID => Alias ?? GID;
+    [IgnoreMember]
+    public string AliasOrGID => string.IsNullOrWhiteSpace(Alias) ? GID : Alias;
 }

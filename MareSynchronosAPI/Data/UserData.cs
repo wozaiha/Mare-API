@@ -1,6 +1,10 @@
-﻿namespace MareSynchronos.API.Data;
+﻿using MessagePack;
 
+namespace MareSynchronos.API.Data;
+
+[MessagePackObject(keyAsPropertyName: true)]
 public record UserData(string UID, string? Alias = null)
 {
-    public string AliasOrUID => Alias ?? UID;
+    [IgnoreMember]
+    public string AliasOrUID => string.IsNullOrWhiteSpace(Alias) ? UID : Alias;
 }

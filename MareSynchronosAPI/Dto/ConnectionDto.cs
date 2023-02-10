@@ -1,7 +1,9 @@
 ﻿using MareSynchronos.API.Data;
+using MessagePack;
 
 namespace MareSynchronos.API.Dto;
 
+[MessagePackObject(keyAsPropertyName: true)]
 public record ConnectionDto(UserData User)
 {
     public int ServerVersion { get; set; }
@@ -10,6 +12,7 @@ public record ConnectionDto(UserData User)
     public ServerInfo ServerInfo { get; set; } = new();
 }
 
+[MessagePackObject(keyAsPropertyName: true)]
 public record ServerInfo
 {
     public string ShardName { get; set; } = string.Empty;

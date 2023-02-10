@@ -8,7 +8,7 @@ namespace MareSynchronos.API.SignalR;
 
 public interface IMareHub
 {
-    const int ApiVersion = 21;
+    const int ApiVersion = 22;
     const string Path = "/mare";
 
     Task<ConnectionDto> GetConnectionDto();

@@ -6,5 +6,5 @@ namespace MareSynchronos.API.Data;
 public record UserData(string UID, string? Alias = null)
 {
     [IgnoreMember]
-    public string AliasOrUID => Alias ?? UID;
+    public string AliasOrUID => string.IsNullOrWhiteSpace(Alias) ? UID : Alias;
 }

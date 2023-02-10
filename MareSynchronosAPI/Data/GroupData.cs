@@ -6,5 +6,5 @@ namespace MareSynchronos.API.Data;
 public record GroupData(string GID, string? Alias = null)
 {
     [IgnoreMember]
-    public string AliasOrGID => Alias ?? GID;
+    public string AliasOrGID => string.IsNullOrWhiteSpace(Alias) ? GID : Alias;
 }

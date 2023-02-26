@@ -8,7 +8,15 @@ public class MareFiles
 
     public const string ServerFiles = "/files";
     public const string ServerFiles_Get = "get";
+    public const string ServerFiles_Upload = "upload";
+    public const string ServerFiles_GetSizes = "getFileSizes";
+    public const string ServerFiles_FilesSend = "filesSend";
+    public const string ServerFiles_DeleteAll = "deleteAll";
     public static Uri ServerFilesGetFullPath(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_Get + "/" + hash);
+    public static Uri ServerFilesUploadFullPath(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_Upload + "/" + hash);
+    public static Uri ServerFilesGetSizesFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_GetSizes);
+    public static Uri ServerFilesFilesSendFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_FilesSend);
+    public static Uri ServerFilesDeleteAllFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_DeleteAll);
 
     public const string Request = "/request";
     public const string Request_Enqueue = "enqueue";

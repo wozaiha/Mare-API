@@ -2,24 +2,16 @@
 using MareSynchronos.API.Dto;
 using MareSynchronos.API.Dto.Group;
 using MareSynchronos.API.Dto.User;
-using MareSynchronos.API.Dto.Files;
 
 namespace MareSynchronos.API.SignalR;
 
 public interface IMareHub
 {
-    const int ApiVersion = 22;
+    const int ApiVersion = 23;
     const string Path = "/mare";
 
     Task<ConnectionDto> GetConnectionDto();
     Task<bool> CheckClientHealth();
-
-    Task<List<DownloadFileDto>> FilesGetSizes(List<string> hashes);
-    Task FilesAbortUpload();
-    Task FilesDeleteAll();
-    Task<bool> FilesIsUploadFinished();
-    Task<List<UploadFileDto>> FilesSend(List<string> fileListHashes);
-    Task FilesUploadStreamAsync(string hash, IAsyncEnumerable<byte[]> fileContent);
 
     Task<List<UserPairDto>> UserGetPairedClients();
     Task UserAddPair(UserDto user);

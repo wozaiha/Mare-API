@@ -6,6 +6,7 @@ namespace MareSynchronos.API.Dto;
 [MessagePackObject(keyAsPropertyName: true)]
 public record ConnectionDto(UserData User)
 {
+    public Version CurrentClientVersion { get; set; } = new(0, 0, 0);
     public int ServerVersion { get; set; }
     public bool IsAdmin { get; set; }
     public bool IsModerator { get; set; }
@@ -19,4 +20,5 @@ public record ServerInfo
     public int MaxGroupUserCount { get; set; }
     public int MaxGroupsCreatedByUser { get; set; }
     public int MaxGroupsJoinedByUser { get; set; }
+    public Uri FileServerAddress { get; set; } = new Uri(string.Empty);
 }

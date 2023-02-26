@@ -1,7 +1,8 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using MessagePack;
-using Newtonsoft.Json;
 
 namespace MareSynchronos.API.Data;
 
@@ -11,7 +12,7 @@ public abstract class HashableDataBase
     {
         DataHash = new(() =>
         {
-            var json = JsonConvert.SerializeObject(this, Formatting.None);
+            var json = JsonSerializer.Serialize(this);
             using SHA256CryptoServiceProvider cryptoProvider = new();
             return BitConverter.ToString(cryptoProvider.ComputeHash(Encoding.UTF8.GetBytes(json))).Replace("-", "", StringComparison.Ordinal);
         });

@@ -5,5 +5,7 @@ public enum UserPermissions
 {
     NoneSet,
     Paired,
-    Paused
+    Paused,
+    DisableAnimations,
+    DisableSounds
 }

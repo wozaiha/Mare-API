@@ -3,7 +3,9 @@
 [Flags]
 public enum UserPermissions
 {
-    NoneSet,
-    Paired,
-    Paused
+    NoneSet = 0,
+    Paired = 1,
+    Paused = 2,
+    DisableAnimations = 4,
+    DisableSounds = 8
 }

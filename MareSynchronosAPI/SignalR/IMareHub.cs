@@ -48,6 +48,8 @@ public interface IMareHub
 
     Task Client_UserUpdateOtherPairPermissions(UserPermissionsDto dto);
 
+    Task Client_UserUpdateProfile(UserDto dto);
+
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
 
     Task<ConnectionDto> GetConnectionDto();
@@ -94,9 +96,15 @@ public interface IMareHub
 
     Task<List<UserPairDto>> UserGetPairedClients();
 
+    Task<UserProfileDto> UserGetProfile(UserDto dto);
+
     Task UserPushData(UserCharaDataMessageDto dto);
 
     Task UserRemovePair(UserDto userDto);
 
+    Task UserReportProfile(UserProfileReportDto userDto);
+
     Task UserSetPairPermissions(UserPermissionsDto userPermissions);
+
+    Task UserSetProfile(UserProfileDto userDescription);
 }

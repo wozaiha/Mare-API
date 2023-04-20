@@ -7,5 +7,6 @@ public enum UserPermissions
     Paired = 1,
     Paused = 2,
     DisableAnimations = 4,
-    DisableSounds = 8
+    DisableSounds = 8,
+    DisableVFX = 16,
 }

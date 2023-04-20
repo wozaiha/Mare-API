@@ -24,6 +24,11 @@ public static class UserPermissionsExtensions
         return perm.HasFlag(UserPermissions.DisableSounds);
     }
 
+    public static bool IsDisableVFX(this UserPermissions perm)
+    {
+        return perm.HasFlag(UserPermissions.DisableVFX);
+    }
+
     public static void SetPaired(this ref UserPermissions perm, bool paired)
     {
         if (paired) perm |= UserPermissions.Paired;
@@ -46,5 +51,11 @@ public static class UserPermissionsExtensions
     {
         if (set) perm |= UserPermissions.DisableSounds;
         else perm &= ~UserPermissions.DisableSounds;
+    }
+
+    public static void SetDisableVFX(this ref UserPermissions perm, bool set)
+    {
+        if (set) perm |= UserPermissions.DisableVFX;
+        else perm &= ~UserPermissions.DisableVFX;
     }
 }

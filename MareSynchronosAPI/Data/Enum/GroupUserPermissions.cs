@@ -7,4 +7,5 @@ public enum GroupUserPermissions
     Paused = 0x1,
     DisableAnimations = 0x2,
     DisableSounds = 0x4,
+    DisableVFX = 0x8,
 }

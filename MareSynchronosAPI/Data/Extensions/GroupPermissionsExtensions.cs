@@ -19,6 +19,11 @@ public static class GroupPermissionsExtensions
         return perm.HasFlag(GroupPermissions.DisableInvites);
     }
 
+    public static bool IsDisableVFX(this GroupPermissions perm)
+    {
+        return perm.HasFlag(GroupPermissions.DisableVFX);
+    }
+
     public static void SetDisableAnimations(this ref GroupPermissions perm, bool set)
     {
         if (set) perm |= GroupPermissions.DisableAnimations;
@@ -35,5 +40,11 @@ public static class GroupPermissionsExtensions
     {
         if (set) perm |= GroupPermissions.DisableInvites;
         else perm &= ~GroupPermissions.DisableInvites;
+    }
+
+    public static void SetDisableVFX(this ref GroupPermissions perm, bool set)
+    {
+        if (set) perm |= GroupPermissions.DisableVFX;
+        else perm &= ~GroupPermissions.DisableVFX;
     }
 }

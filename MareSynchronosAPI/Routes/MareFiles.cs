@@ -32,7 +32,7 @@ public class MareFiles
 
     public static Uri RequestCancelFullPath(Uri baseUri, Guid guid) => new Uri(baseUri, Request + "/" + Request_Cancel + "?requestId=" + guid.ToString());
 
-    public static Uri RequestCheckQueueFullPath(Uri baseUri, Guid guid, string hash) => new Uri(baseUri, Request + "/" + Request_Check + "?requestId=" + guid.ToString() + "&file=" + hash);
+    public static Uri RequestCheckQueueFullPath(Uri baseUri, Guid guid) => new Uri(baseUri, Request + "/" + Request_Check + "?requestId=" + guid.ToString());
 
     public static Uri RequestEnqueueFullPath(Uri baseUri) => new(baseUri, Request + "/" + Request_Enqueue);
 

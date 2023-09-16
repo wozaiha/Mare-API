@@ -29,6 +29,11 @@ public static class UserPermissionsExtensions
         return perm.HasFlag(UserPermissions.DisableVFX);
     }
 
+    public static bool IsSticky(this UserPermissions perm)
+    {
+        return perm.HasFlag(UserPermissions.Sticky);
+    }
+
     public static void SetPaired(this ref UserPermissions perm, bool paired)
     {
         if (paired) perm |= UserPermissions.Paired;
@@ -57,5 +62,11 @@ public static class UserPermissionsExtensions
     {
         if (set) perm |= UserPermissions.DisableVFX;
         else perm &= ~UserPermissions.DisableVFX;
+    }
+
+    public static void SetSticky(this ref UserPermissions perm, bool sticky)
+    {
+        if (sticky) perm |= UserPermissions.Sticky;
+        else perm &= ~UserPermissions.Sticky;
     }
 }

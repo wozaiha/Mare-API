@@ -6,12 +6,12 @@ public static class GroupPermissionsExtensions
 {
     public static bool IsDisableAnimations(this GroupPermissions perm)
     {
-        return perm.HasFlag(GroupPermissions.DisableAnimations);
+        return perm.HasFlag(GroupPermissions.PreferDisableAnimations);
     }
 
     public static bool IsDisableSounds(this GroupPermissions perm)
     {
-        return perm.HasFlag(GroupPermissions.DisableSounds);
+        return perm.HasFlag(GroupPermissions.PreferDisableSounds);
     }
 
     public static bool IsDisableInvites(this GroupPermissions perm)
@@ -21,30 +21,30 @@ public static class GroupPermissionsExtensions
 
     public static bool IsDisableVFX(this GroupPermissions perm)
     {
-        return perm.HasFlag(GroupPermissions.DisableVFX);
+        return perm.HasFlag(GroupPermissions.PreferDisableVFX);
     }
 
-    public static void SetDisableAnimations(this ref GroupPermissions perm, bool set)
+    public static void SetPreferDisableAnimations(this ref GroupPermissions perm, bool set)
     {
-        if (set) perm |= GroupPermissions.DisableAnimations;
-        else perm &= ~GroupPermissions.DisableAnimations;
+        if (set) perm |= GroupPermissions.PreferDisableAnimations;
+        else perm &= ~GroupPermissions.PreferDisableAnimations;
     }
 
-    public static void SetDisableSounds(this ref GroupPermissions perm, bool set)
+    public static void SetPreferDisableSounds(this ref GroupPermissions perm, bool set)
     {
-        if (set) perm |= GroupPermissions.DisableSounds;
-        else perm &= ~GroupPermissions.DisableSounds;
+        if (set) perm |= GroupPermissions.PreferDisableSounds;
+        else perm &= ~GroupPermissions.PreferDisableSounds;
     }
 
-    public static void SetDisableInvites(this ref GroupPermissions perm, bool set)
+    public static void SetPreferDisableInvites(this ref GroupPermissions perm, bool set)
     {
         if (set) perm |= GroupPermissions.DisableInvites;
         else perm &= ~GroupPermissions.DisableInvites;
     }
 
-    public static void SetDisableVFX(this ref GroupPermissions perm, bool set)
+    public static void SetPreferDisableVFX(this ref GroupPermissions perm, bool set)
     {
-        if (set) perm |= GroupPermissions.DisableVFX;
-        else perm &= ~GroupPermissions.DisableVFX;
+        if (set) perm |= GroupPermissions.PreferDisableVFX;
+        else perm &= ~GroupPermissions.PreferDisableVFX;
     }
 }

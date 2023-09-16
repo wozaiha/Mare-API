@@ -52,6 +52,8 @@ public interface IMareHub
 
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
 
+    Task Client_UserUpdateDefaultPermissions(DefaultPermissionsDto dto);
+
     Task<ConnectionDto> GetConnectionDto();
 
     Task GroupBanUser(GroupPairDto dto, string reason);
@@ -107,4 +109,5 @@ public interface IMareHub
     Task UserSetPairPermissions(UserPermissionsDto userPermissions);
 
     Task UserSetProfile(UserProfileDto userDescription);
+    Task UserUpdateDefaultPermissions(DefaultPermissionsDto defaultPermissionsDto);
 }

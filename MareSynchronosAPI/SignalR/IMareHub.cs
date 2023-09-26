@@ -64,11 +64,11 @@ public interface IMareHub
 
     Task GroupChangeOwnership(GroupPairDto groupPair);
 
-    Task<bool> GroupChangePassword(GroupPasswordDto groupPassword);
+    Task<bool> GroupChangePassword(GroupJoinDto groupPassword);
 
     Task GroupClear(GroupDto group);
 
-    Task<GroupPasswordDto> GroupCreate();
+    Task<GroupJoinDto> GroupCreate();
 
     Task<List<string>> GroupCreateTempInvite(GroupDto group, int amount);
 
@@ -76,7 +76,8 @@ public interface IMareHub
 
     Task<List<BannedGroupUserDto>> GroupGetBannedUsers(GroupDto group);
 
-    Task<bool> GroupJoin(GroupPasswordDto passwordedGroup);
+    Task<GroupJoinInfoDto> GroupJoin(GroupPasswordDto passwordedGroup);
+    Task<bool> GroupJoinFinalize(GroupJoinDto passwordedGroup);
 
     Task GroupLeave(GroupDto group);
 

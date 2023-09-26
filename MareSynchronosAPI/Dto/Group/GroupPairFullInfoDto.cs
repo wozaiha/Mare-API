@@ -5,8 +5,8 @@ using MessagePack;
 namespace MareSynchronos.API.Dto.Group;
 
 [MessagePackObject(keyAsPropertyName: true)]
-public record GroupPairFullInfoDto(GroupData Group, UserData User, GroupUserInfo GroupPairStatusInfo, GroupUserPreferredPermissions GroupUserPermissions) : GroupPairDto(Group, User)
+public record GroupPairFullInfoDto(GroupData Group, UserData User, GroupPairUserInfo GroupPairStatusInfo, UserPermissions GroupUserPermissions) : GroupPairDto(Group, User)
 {
-    public GroupUserInfo GroupPairStatusInfo { get; set; } = GroupPairStatusInfo;
-    public GroupUserPreferredPermissions GroupUserPermissions { get; set; } = GroupUserPermissions;
+    public GroupPairUserInfo GroupPairStatusInfo { get; set; } = GroupPairStatusInfo;
+    public UserPermissions GroupUserPermissions { get; set; } = GroupUserPermissions;
 }

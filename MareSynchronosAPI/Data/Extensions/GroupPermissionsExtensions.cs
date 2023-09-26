@@ -4,12 +4,12 @@ namespace MareSynchronos.API.Data.Extensions;
 
 public static class GroupPermissionsExtensions
 {
-    public static bool IsDisableAnimations(this GroupPermissions perm)
+    public static bool IsPreferDisableAnimations(this GroupPermissions perm)
     {
         return perm.HasFlag(GroupPermissions.PreferDisableAnimations);
     }
 
-    public static bool IsDisableSounds(this GroupPermissions perm)
+    public static bool IsPreferDisableSounds(this GroupPermissions perm)
     {
         return perm.HasFlag(GroupPermissions.PreferDisableSounds);
     }
@@ -19,7 +19,7 @@ public static class GroupPermissionsExtensions
         return perm.HasFlag(GroupPermissions.DisableInvites);
     }
 
-    public static bool IsDisableVFX(this GroupPermissions perm)
+    public static bool IsPreferDisableVFX(this GroupPermissions perm)
     {
         return perm.HasFlag(GroupPermissions.PreferDisableVFX);
     }
@@ -36,7 +36,7 @@ public static class GroupPermissionsExtensions
         else perm &= ~GroupPermissions.PreferDisableSounds;
     }
 
-    public static void SetPreferDisableInvites(this ref GroupPermissions perm, bool set)
+    public static void SetDisableInvites(this ref GroupPermissions perm, bool set)
     {
         if (set) perm |= GroupPermissions.DisableInvites;
         else perm &= ~GroupPermissions.DisableInvites;

@@ -62,7 +62,7 @@ public interface IMareHub
 
     Task GroupChangeOwnership(GroupPairDto groupPair);
 
-    Task<bool> GroupChangePassword(GroupJoinDto groupPassword);
+    Task<bool> GroupChangePassword(GroupPasswordDto groupPassword);
 
     Task GroupClear(GroupDto group);
 

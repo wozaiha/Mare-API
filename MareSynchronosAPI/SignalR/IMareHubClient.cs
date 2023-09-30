@@ -13,8 +13,6 @@ public interface IMareHubClient : IMareHub
 
     void OnGroupDelete(Action<GroupDto> act);
 
-    void OnGroupPairChangePermissions(Action<GroupPairUserPermissionDto> act);
-
     void OnGroupPairChangeUserInfo(Action<GroupPairUserInfoDto> act);
 
     void OnGroupPairJoined(Action<GroupPairFullInfoDto> act);
@@ -46,5 +44,6 @@ public interface IMareHubClient : IMareHub
     void OnUserUpdateProfile(Action<UserDto> act);
 
     void OnUserUpdateSelfPairPermissions(Action<UserPermissionsDto> act);
+
     void OnUserDefaultPermissionUpdate(Action<DefaultPermissionsDto> act);
 }

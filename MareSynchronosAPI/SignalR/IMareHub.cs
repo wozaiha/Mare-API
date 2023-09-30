@@ -18,8 +18,6 @@ public interface IMareHub
 
     Task Client_GroupDelete(GroupDto groupDto);
 
-    Task Client_GroupPairChangePermissions(GroupPairUserPermissionDto permissionDto);
-
     Task Client_GroupPairChangeUserInfo(GroupPairUserInfoDto userInfo);
 
     Task Client_GroupPairJoined(GroupPairFullInfoDto groupPairInfoDto);
@@ -86,8 +84,6 @@ public interface IMareHub
     Task GroupSetUserInfo(GroupPairUserInfoDto groupPair);
 
     Task<List<GroupFullInfoDto>> GroupsGetAll();
-
-    Task<List<GroupPairFullInfoDto>> GroupsGetUsersInGroup(GroupDto group);
 
     Task GroupUnbanUser(GroupPairDto groupPair);
 

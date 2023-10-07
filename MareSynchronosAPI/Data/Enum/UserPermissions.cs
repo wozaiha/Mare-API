@@ -10,4 +10,5 @@ public enum UserPermissions
     DisableSounds = 8,
     DisableVFX = 16,
     Sticky = 32,
+    Synced = 64,
 }

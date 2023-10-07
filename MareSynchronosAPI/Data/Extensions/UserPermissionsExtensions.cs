@@ -34,6 +34,11 @@ public static class UserPermissionsExtensions
         return perm.HasFlag(UserPermissions.Sticky);
     }
 
+    public static bool IsSynced(this UserPermissions perm)
+    {
+        return perm.HasFlag(UserPermissions.Synced);
+    }
+
     public static void SetPaired(this ref UserPermissions perm, bool paired)
     {
         if (paired) perm |= UserPermissions.Paired;
@@ -68,5 +73,11 @@ public static class UserPermissionsExtensions
     {
         if (sticky) perm |= UserPermissions.Sticky;
         else perm &= ~UserPermissions.Sticky;
+    }
+
+    public static void SetSynced(this ref UserPermissions perm, bool synced)
+    {
+        if (synced) perm |= UserPermissions.Synced;
+        else perm &= ~UserPermissions.Synced;
     }
 }

@@ -4,11 +4,6 @@ namespace MareSynchronos.API.Data.Extensions;
 
 public static class UserPermissionsExtensions
 {
-    public static bool IsPaired(this UserPermissions perm)
-    {
-        return perm.HasFlag(UserPermissions.Paired);
-    }
-
     public static bool IsPaused(this UserPermissions perm)
     {
         return perm.HasFlag(UserPermissions.Paused);
@@ -32,17 +27,6 @@ public static class UserPermissionsExtensions
     public static bool IsSticky(this UserPermissions perm)
     {
         return perm.HasFlag(UserPermissions.Sticky);
-    }
-
-    public static bool IsSynced(this UserPermissions perm)
-    {
-        return perm.HasFlag(UserPermissions.Synced);
-    }
-
-    public static void SetPaired(this ref UserPermissions perm, bool paired)
-    {
-        if (paired) perm |= UserPermissions.Paired;
-        else perm &= ~UserPermissions.Paired;
     }
 
     public static void SetPaused(this ref UserPermissions perm, bool paused)
@@ -73,11 +57,5 @@ public static class UserPermissionsExtensions
     {
         if (sticky) perm |= UserPermissions.Sticky;
         else perm &= ~UserPermissions.Sticky;
-    }
-
-    public static void SetSynced(this ref UserPermissions perm, bool synced)
-    {
-        if (synced) perm |= UserPermissions.Synced;
-        else perm &= ~UserPermissions.Synced;
     }
 }

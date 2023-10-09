@@ -46,6 +46,8 @@ public interface IMareHub
 
     Task Client_UserUpdateOtherPairPermissions(UserPermissionsDto dto);
 
+    Task Client_UpdateUserIndividualPairStatusDto(UserIndividualPairStatusDto dto);
+
     Task Client_UserUpdateProfile(UserDto dto);
 
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
@@ -93,7 +95,7 @@ public interface IMareHub
 
     Task<List<OnlineUserIdentDto>> UserGetOnlinePairs();
 
-    Task<List<UserPairDto>> UserGetPairedClients();
+    Task<List<UserFullPairDto>> UserGetPairedClients();
 
     Task<UserProfileDto> UserGetProfile(UserDto dto);
 

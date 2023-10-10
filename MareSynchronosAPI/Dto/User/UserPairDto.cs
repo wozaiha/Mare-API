@@ -9,6 +9,7 @@ public record UserFullPairDto(UserData User, IndividualPairStatus IndividualPair
 {
     public UserPermissions OwnPermissions { get; set; } = OwnPermissions;
     public UserPermissions OtherPermissions { get; set; } = OtherPermissions;
+    public IndividualPairStatus IndividualPairStatus { get; set; } = IndividualPairStatus;
 }
 
 [MessagePackObject(keyAsPropertyName: true)]
@@ -16,4 +17,5 @@ public record UserPairDto(UserData User, IndividualPairStatus IndividualPairStat
 {
     public UserPermissions OwnPermissions { get; set; } = OwnPermissions;
     public UserPermissions OtherPermissions { get; set; } = OtherPermissions;
+    public IndividualPairStatus IndividualPairStatus { get; set; } = IndividualPairStatus;
 }

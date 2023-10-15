@@ -14,14 +14,14 @@ public static class GroupUserPermissionsExtensions
         return perm.HasFlag(GroupUserPreferredPermissions.DisableSounds);
     }
 
-    public static bool IsPaused(this GroupUserPreferredPermissions perm)
-    {
-        return perm.HasFlag(GroupUserPreferredPermissions.Paused);
-    }
-
     public static bool IsDisableVFX(this GroupUserPreferredPermissions perm)
     {
         return perm.HasFlag(GroupUserPreferredPermissions.DisableVFX);
+    }
+
+    public static bool IsPaused(this GroupUserPreferredPermissions perm)
+    {
+        return perm.HasFlag(GroupUserPreferredPermissions.Paused);
     }
 
     public static void SetDisableAnimations(this ref GroupUserPreferredPermissions perm, bool set)
@@ -36,15 +36,15 @@ public static class GroupUserPermissionsExtensions
         else perm &= ~GroupUserPreferredPermissions.DisableSounds;
     }
 
-    public static void SetPaused(this ref GroupUserPreferredPermissions perm, bool set)
-    {
-        if (set) perm |= GroupUserPreferredPermissions.Paused;
-        else perm &= ~GroupUserPreferredPermissions.Paused;
-    }
-
     public static void SetDisableVFX(this ref GroupUserPreferredPermissions perm, bool set)
     {
         if (set) perm |= GroupUserPreferredPermissions.DisableVFX;
         else perm &= ~GroupUserPreferredPermissions.DisableVFX;
+    }
+
+    public static void SetPaused(this ref GroupUserPreferredPermissions perm, bool set)
+    {
+        if (set) perm |= GroupUserPreferredPermissions.Paused;
+        else perm &= ~GroupUserPreferredPermissions.Paused;
     }
 }

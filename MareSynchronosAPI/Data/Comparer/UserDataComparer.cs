@@ -2,10 +2,12 @@
 
 public class UserDataComparer : IEqualityComparer<UserData>
 {
-    public static UserDataComparer Instance => _instance;
     private static UserDataComparer _instance = new();
 
-    private UserDataComparer() { }
+    private UserDataComparer()
+    { }
+
+    public static UserDataComparer Instance => _instance;
 
     public bool Equals(UserData? x, UserData? y)
     {

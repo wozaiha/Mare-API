@@ -2,10 +2,13 @@
 
 public class GroupDataComparer : IEqualityComparer<GroupData>
 {
-    public static GroupDataComparer Instance => _instance;
     private static GroupDataComparer _instance = new GroupDataComparer();
 
-    private GroupDataComparer() { }
+    private GroupDataComparer()
+    { }
+
+    public static GroupDataComparer Instance => _instance;
+
     public bool Equals(GroupData? x, GroupData? y)
     {
         if (x == null || y == null) return false;

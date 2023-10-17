@@ -7,7 +7,7 @@ namespace MareSynchronos.API.SignalR;
 
 public interface IMareHub
 {
-    const int ApiVersion = 26;
+    const int ApiVersion = 27;
     const string Path = "/mare";
 
     Task<bool> CheckClientHealth();
@@ -17,8 +17,6 @@ public interface IMareHub
     Task Client_GroupChangePermissions(GroupPermissionDto groupPermission);
 
     Task Client_GroupDelete(GroupDto groupDto);
-
-    Task Client_GroupPairChangePermissions(GroupPairUserPermissionDto permissionDto);
 
     Task Client_GroupPairChangeUserInfo(GroupPairUserInfoDto userInfo);
 
@@ -48,9 +46,14 @@ public interface IMareHub
 
     Task Client_UserUpdateOtherPairPermissions(UserPermissionsDto dto);
 
+    Task Client_UpdateUserIndividualPairStatusDto(UserIndividualPairStatusDto dto);
+
     Task Client_UserUpdateProfile(UserDto dto);
 
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
+
+    Task Client_UserUpdateDefaultPermissions(DefaultPermissionsDto dto);
+    Task Client_GroupChangeUserPairPermissions(GroupPairUserPermissionDto dto);
 
     Task<ConnectionDto> GetConnectionDto();
 
@@ -66,7 +69,7 @@ public interface IMareHub
 
     Task GroupClear(GroupDto group);
 
-    Task<GroupPasswordDto> GroupCreate();
+    Task<GroupJoinDto> GroupCreate();
 
     Task<List<string>> GroupCreateTempInvite(GroupDto group, int amount);
 
@@ -74,7 +77,8 @@ public interface IMareHub
 
     Task<List<BannedGroupUserDto>> GroupGetBannedUsers(GroupDto group);
 
-    Task<bool> GroupJoin(GroupPasswordDto passwordedGroup);
+    Task<GroupJoinInfoDto> GroupJoin(GroupPasswordDto passwordedGroup);
+    Task<bool> GroupJoinFinalize(GroupJoinDto passwordedGroup);
 
     Task GroupLeave(GroupDto group);
 
@@ -84,8 +88,6 @@ public interface IMareHub
 
     Task<List<GroupFullInfoDto>> GroupsGetAll();
 
-    Task<List<GroupPairFullInfoDto>> GroupsGetUsersInGroup(GroupDto group);
-
     Task GroupUnbanUser(GroupPairDto groupPair);
 
     Task UserAddPair(UserDto user);
@@ -94,7 +96,7 @@ public interface IMareHub
 
     Task<List<OnlineUserIdentDto>> UserGetOnlinePairs();
 
-    Task<List<UserPairDto>> UserGetPairedClients();
+    Task<List<UserFullPairDto>> UserGetPairedClients();
 
     Task<UserProfileDto> UserGetProfile(UserDto dto);
 
@@ -107,4 +109,5 @@ public interface IMareHub
     Task UserSetPairPermissions(UserPermissionsDto userPermissions);
 
     Task UserSetProfile(UserProfileDto userDescription);
+    Task UserUpdateDefaultPermissions(DefaultPermissionsDto defaultPermissionsDto);
 }

@@ -4,9 +4,13 @@ namespace MareSynchronos.API.Data.Comparer;
 
 public class UserDtoComparer : IEqualityComparer<UserDto>
 {
-    public static UserDtoComparer Instance => _instance;
     private static UserDtoComparer _instance = new();
-    private UserDtoComparer() { }
+
+    private UserDtoComparer()
+    { }
+
+    public static UserDtoComparer Instance => _instance;
+
     public bool Equals(UserDto? x, UserDto? y)
     {
         if (x == null || y == null) return false;

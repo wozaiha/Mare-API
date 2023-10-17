@@ -4,47 +4,47 @@ namespace MareSynchronos.API.Data.Extensions;
 
 public static class GroupUserPermissionsExtensions
 {
-    public static bool IsDisableAnimations(this GroupUserPermissions perm)
+    public static bool IsDisableAnimations(this GroupUserPreferredPermissions perm)
     {
-        return perm.HasFlag(GroupUserPermissions.DisableAnimations);
+        return perm.HasFlag(GroupUserPreferredPermissions.DisableAnimations);
     }
 
-    public static bool IsDisableSounds(this GroupUserPermissions perm)
+    public static bool IsDisableSounds(this GroupUserPreferredPermissions perm)
     {
-        return perm.HasFlag(GroupUserPermissions.DisableSounds);
+        return perm.HasFlag(GroupUserPreferredPermissions.DisableSounds);
     }
 
-    public static bool IsPaused(this GroupUserPermissions perm)
+    public static bool IsDisableVFX(this GroupUserPreferredPermissions perm)
     {
-        return perm.HasFlag(GroupUserPermissions.Paused);
+        return perm.HasFlag(GroupUserPreferredPermissions.DisableVFX);
     }
 
-    public static bool IsDisableVFX(this GroupUserPermissions perm)
+    public static bool IsPaused(this GroupUserPreferredPermissions perm)
     {
-        return perm.HasFlag(GroupUserPermissions.DisableVFX);
+        return perm.HasFlag(GroupUserPreferredPermissions.Paused);
     }
 
-    public static void SetDisableAnimations(this ref GroupUserPermissions perm, bool set)
+    public static void SetDisableAnimations(this ref GroupUserPreferredPermissions perm, bool set)
     {
-        if (set) perm |= GroupUserPermissions.DisableAnimations;
-        else perm &= ~GroupUserPermissions.DisableAnimations;
+        if (set) perm |= GroupUserPreferredPermissions.DisableAnimations;
+        else perm &= ~GroupUserPreferredPermissions.DisableAnimations;
     }
 
-    public static void SetDisableSounds(this ref GroupUserPermissions perm, bool set)
+    public static void SetDisableSounds(this ref GroupUserPreferredPermissions perm, bool set)
     {
-        if (set) perm |= GroupUserPermissions.DisableSounds;
-        else perm &= ~GroupUserPermissions.DisableSounds;
+        if (set) perm |= GroupUserPreferredPermissions.DisableSounds;
+        else perm &= ~GroupUserPreferredPermissions.DisableSounds;
     }
 
-    public static void SetPaused(this ref GroupUserPermissions perm, bool set)
+    public static void SetDisableVFX(this ref GroupUserPreferredPermissions perm, bool set)
     {
-        if (set) perm |= GroupUserPermissions.Paused;
-        else perm &= ~GroupUserPermissions.Paused;
+        if (set) perm |= GroupUserPreferredPermissions.DisableVFX;
+        else perm &= ~GroupUserPreferredPermissions.DisableVFX;
     }
 
-    public static void SetDisableVFX(this ref GroupUserPermissions perm, bool set)
+    public static void SetPaused(this ref GroupUserPreferredPermissions perm, bool set)
     {
-        if (set) perm |= GroupUserPermissions.DisableVFX;
-        else perm &= ~GroupUserPermissions.DisableVFX;
+        if (set) perm |= GroupUserPreferredPermissions.Paused;
+        else perm &= ~GroupUserPreferredPermissions.Paused;
     }
 }

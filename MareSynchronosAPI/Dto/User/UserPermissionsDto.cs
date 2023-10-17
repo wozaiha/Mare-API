@@ -6,3 +6,6 @@ namespace MareSynchronos.API.Dto.User;
 
 [MessagePackObject(keyAsPropertyName: true)]
 public record UserPermissionsDto(UserData User, UserPermissions Permissions) : UserDto(User);
+
+[MessagePackObject(keyAsPropertyName: true)]
+public record UserIndividualPairStatusDto(UserData User, IndividualPairStatus IndividualPairStatus) : UserDto(User);

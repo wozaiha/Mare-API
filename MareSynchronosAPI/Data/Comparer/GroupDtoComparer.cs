@@ -2,13 +2,14 @@
 
 namespace MareSynchronos.API.Data.Comparer;
 
-
 public class GroupDtoComparer : IEqualityComparer<GroupDto>
 {
-    public static GroupDtoComparer Instance => _instance;
     private static GroupDtoComparer _instance = new GroupDtoComparer();
 
-    private GroupDtoComparer() { }
+    private GroupDtoComparer()
+    { }
+
+    public static GroupDtoComparer Instance => _instance;
 
     public bool Equals(GroupDto? x, GroupDto? y)
     {

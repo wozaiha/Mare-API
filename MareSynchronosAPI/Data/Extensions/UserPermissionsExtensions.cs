@@ -4,16 +4,6 @@ namespace MareSynchronos.API.Data.Extensions;
 
 public static class UserPermissionsExtensions
 {
-    public static bool IsPaired(this UserPermissions perm)
-    {
-        return perm.HasFlag(UserPermissions.Paired);
-    }
-
-    public static bool IsPaused(this UserPermissions perm)
-    {
-        return perm.HasFlag(UserPermissions.Paused);
-    }
-
     public static bool IsDisableAnimations(this UserPermissions perm)
     {
         return perm.HasFlag(UserPermissions.DisableAnimations);
@@ -29,16 +19,14 @@ public static class UserPermissionsExtensions
         return perm.HasFlag(UserPermissions.DisableVFX);
     }
 
-    public static void SetPaired(this ref UserPermissions perm, bool paired)
+    public static bool IsPaused(this UserPermissions perm)
     {
-        if (paired) perm |= UserPermissions.Paired;
-        else perm &= ~UserPermissions.Paired;
+        return perm.HasFlag(UserPermissions.Paused);
     }
 
-    public static void SetPaused(this ref UserPermissions perm, bool paused)
+    public static bool IsSticky(this UserPermissions perm)
     {
-        if (paused) perm |= UserPermissions.Paused;
-        else perm &= ~UserPermissions.Paused;
+        return perm.HasFlag(UserPermissions.Sticky);
     }
 
     public static void SetDisableAnimations(this ref UserPermissions perm, bool set)
@@ -57,5 +45,17 @@ public static class UserPermissionsExtensions
     {
         if (set) perm |= UserPermissions.DisableVFX;
         else perm &= ~UserPermissions.DisableVFX;
+    }
+
+    public static void SetPaused(this ref UserPermissions perm, bool paused)
+    {
+        if (paused) perm |= UserPermissions.Paused;
+        else perm &= ~UserPermissions.Paused;
+    }
+
+    public static void SetSticky(this ref UserPermissions perm, bool sticky)
+    {
+        if (sticky) perm |= UserPermissions.Sticky;
+        else perm &= ~UserPermissions.Sticky;
     }
 }

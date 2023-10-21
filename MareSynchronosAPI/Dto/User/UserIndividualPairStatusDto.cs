@@ -5,4 +5,4 @@ using MessagePack;
 namespace MareSynchronos.API.Dto.User;
 
 [MessagePackObject(keyAsPropertyName: true)]
-public record UserPermissionsDto(UserData User, UserPermissions Permissions) : UserDto(User);
+public record UserIndividualPairStatusDto(UserData User, IndividualPairStatus IndividualPairStatus) : UserDto(User);

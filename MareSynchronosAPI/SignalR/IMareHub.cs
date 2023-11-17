@@ -7,7 +7,7 @@ namespace MareSynchronos.API.SignalR;
 
 public interface IMareHub
 {
-    const int ApiVersion = 28;
+    const int ApiVersion = 29;
     const string Path = "/mare";
 
     Task<bool> CheckClientHealth();
@@ -56,7 +56,7 @@ public interface IMareHub
 
     Task UserAddPair(UserDto user);
     Task UserDelete();
-    Task<List<OnlineUserIdentDto>> UserGetOnlinePairs();
+    Task<List<OnlineUserIdentDto>> UserGetOnlinePairs(CensusDataDto? censusDataDto);
     Task<List<UserFullPairDto>> UserGetPairedClients();
     Task<UserProfileDto> UserGetProfile(UserDto dto);
     Task UserPushData(UserCharaDataMessageDto dto);

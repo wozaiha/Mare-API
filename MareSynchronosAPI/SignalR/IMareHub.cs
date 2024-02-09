@@ -53,6 +53,7 @@ public interface IMareHub
     Task GroupSetUserInfo(GroupPairUserInfoDto groupPair);
     Task<List<GroupFullInfoDto>> GroupsGetAll();
     Task GroupUnbanUser(GroupPairDto groupPair);
+    Task<int> GroupPrune(GroupDto group, int days, bool execute);
 
     Task UserAddPair(UserDto user);
     Task UserDelete();

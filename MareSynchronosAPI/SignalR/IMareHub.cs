@@ -7,7 +7,7 @@ namespace MareSynchronos.API.SignalR;
 
 public interface IMareHub
 {
-    const int ApiVersion = 30;
+    const int ApiVersion = 31;
     const string Path = "/mare";
 
     Task<bool> CheckClientHealth();
@@ -30,7 +30,7 @@ public interface IMareHub
     Task Client_UserSendOnline(OnlineUserIdentDto dto);
     Task Client_UserUpdateOtherPairPermissions(UserPermissionsDto dto);
     Task Client_UpdateUserIndividualPairStatusDto(UserIndividualPairStatusDto dto);
-    Task Client_UserUpdateProfile(UserDto dto);
+    Task Client_UserUpdateProfile(UserDto dto, Guid thumbId);
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
     Task Client_UserUpdateDefaultPermissions(DefaultPermissionsDto dto);
     Task Client_GroupChangeUserPairPermissions(GroupPairUserPermissionDto dto);
@@ -59,11 +59,13 @@ public interface IMareHub
     Task UserDelete();
     Task<List<OnlineUserIdentDto>> UserGetOnlinePairs(CensusDataDto? censusDataDto);
     Task<List<UserFullPairDto>> UserGetPairedClients();
-    Task<UserProfileDto> UserGetProfile(UserDto dto);
     Task UserPushData(UserCharaDataMessageDto dto);
     Task UserRemovePair(UserDto userDto);
-    Task UserReportProfile(UserProfileReportDto userDto);
-    Task UserSetProfile(UserProfileDto userDescription);
     Task UserUpdateDefaultPermissions(DefaultPermissionsDto defaultPermissionsDto);
     Task SetBulkPermissions(BulkPermissionsDto dto);
+
+    Task UserReportProfile(UserProfileReportDto userDto);
+    Task UserSetProfile(UserProfileDto userDescription);
+    Task<UserProfileDto> UserGetProfile(UserDto dto);
+    Task<byte[]> UserGetProfileThumb(Guid profileId);
 }

@@ -5,7 +5,7 @@ using MessagePack;
 namespace MareSynchronos.API.Dto.User;
 
 [MessagePackObject(keyAsPropertyName: true)]
-public record UserFullPairDto(UserData User, IndividualPairStatus IndividualPairStatus, List<string> Groups, UserPermissions OwnPermissions, UserPermissions OtherPermissions) : UserDto(User)
+public record UserFullPairDto(UserData User, Guid profileThumb, IndividualPairStatus IndividualPairStatus, List<string> Groups, UserPermissions OwnPermissions, UserPermissions OtherPermissions) : UserDto(User)
 {
     public UserPermissions OwnPermissions { get; set; } = OwnPermissions;
     public UserPermissions OtherPermissions { get; set; } = OtherPermissions;

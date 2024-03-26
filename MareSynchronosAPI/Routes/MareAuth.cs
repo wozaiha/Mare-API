@@ -2,7 +2,6 @@
 
 public class MareAuth
 {
-
     public const string Auth = "/auth";
     public const string Auth_CreateIdent = "createWithIdent";
     public const string Auth_RenewToken = "renewToken";

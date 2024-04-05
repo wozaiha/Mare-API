@@ -65,5 +65,6 @@ public interface IMareHub
     Task SetBulkPermissions(BulkPermissionsDto dto);
 
     Task UserSetProfile(UserProfileDto userDescription);
-    Task<UserProfileDto> UserGetProfile(UserDto dto);
+    Task<UserProfileMetaDto> UserGetProfile(UserDto dto);
+    Task<byte[]?> ProfileGetImage(Guid ImageId);
 }

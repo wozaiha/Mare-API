@@ -30,7 +30,7 @@ public interface IMareHub
     Task Client_UserSendOnline(OnlineUserIdentDto dto);
     Task Client_UserUpdateOtherPairPermissions(UserPermissionsDto dto);
     Task Client_UpdateUserIndividualPairStatusDto(UserIndividualPairStatusDto dto);
-    Task Client_UserUpdateProfile(UserDto dto, Guid thumbId);
+    Task Client_UserUpdateProfile(UserDto dto, Guid imageId);
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
     Task Client_UserUpdateDefaultPermissions(DefaultPermissionsDto dto);
     Task Client_GroupChangeUserPairPermissions(GroupPairUserPermissionDto dto);
@@ -64,7 +64,6 @@ public interface IMareHub
     Task UserUpdateDefaultPermissions(DefaultPermissionsDto defaultPermissionsDto);
     Task SetBulkPermissions(BulkPermissionsDto dto);
 
-    Task UserReportProfile(UserProfileReportDto userDto);
     Task UserSetProfile(UserProfileDto userDescription);
     Task<UserProfileDto> UserGetProfile(UserDto dto);
 }

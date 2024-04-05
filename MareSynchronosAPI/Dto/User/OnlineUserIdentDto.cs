@@ -4,4 +4,4 @@ using MessagePack;
 namespace MareSynchronos.API.Dto.User;
 
 [MessagePackObject(keyAsPropertyName: true)]
-public record OnlineUserIdentDto(UserData User, string Ident, Guid profileThumb) : UserDto(User);
+public record OnlineUserIdentDto(UserData User, string Ident, Guid ProfileId) : UserDto(User);

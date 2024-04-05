@@ -67,5 +67,4 @@ public interface IMareHub
     Task UserReportProfile(UserProfileReportDto userDto);
     Task UserSetProfile(UserProfileDto userDescription);
     Task<UserProfileDto> UserGetProfile(UserDto dto);
-    Task<byte[]> UserGetProfileThumb(Guid profileId);
 }

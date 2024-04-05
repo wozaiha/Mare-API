@@ -41,7 +41,7 @@ public interface IMareHubClient : IMareHub
 
     void OnUserUpdateOtherPairPermissions(Action<UserPermissionsDto> act);
 
-    void OnUserUpdateProfile(Action<UserDto> act);
+    void OnUserUpdateProfile(Action<UserDto, Guid> act);
 
     void OnUserUpdateSelfPairPermissions(Action<UserPermissionsDto> act);
 

@@ -11,4 +11,5 @@ public record DownloadFileDto : ITransferFileDto
     public long Size { get; set; } = 0;
     public bool IsForbidden { get; set; } = false;
     public string ForbiddenBy { get; set; } = string.Empty;
+    public long RawSize { get; set; } = 0;
 }

@@ -16,6 +16,6 @@ public class MareAuth
     public static Uri RenewTokenFullPath(Uri baseUri) => new Uri(baseUri, Auth + "/" + Auth_RenewToken);
     public static Uri RenewOAuthTokenFullPath(Uri baseUri) => new Uri(baseUri, OAuth + "/" + OAuth_RenewOAuthToken);
     public static Uri GetDiscordOAuthEndpoint(Uri baseUri) => new Uri(baseUri, OAuth + "/" + OAuth_GetDiscordOAuthEndpoint);
-    public static Uri GetDiscordOAuthToken(Uri baseUri) => new Uri(baseUri, OAuth + "/" + OAuth_GetDiscordOAuthToken);
+    public static Uri GetDiscordOAuthToken(Uri baseUri, string sessionId) => new Uri(baseUri, OAuth + "/" + OAuth_GetDiscordOAuthToken + "?sessionId=" + sessionId);
     public static Uri GetUIDs(Uri baseUri) => new Uri(baseUri, OAuth + "/" + OAuth_GetUIDs);
 }

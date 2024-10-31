@@ -62,6 +62,7 @@ public interface IMareHub
     Task<UserProfileDto> UserGetProfile(UserDto dto);
     Task UserPushData(UserCharaDataMessageDto dto);
     Task UserRemovePair(UserDto userDto);
+    Task UserReportProfile(UserProfileReportDto userDto);
     Task UserSetProfile(UserProfileDto userDescription);
     Task UserUpdateDefaultPermissions(DefaultPermissionsDto defaultPermissionsDto);
     Task SetBulkPermissions(BulkPermissionsDto dto);

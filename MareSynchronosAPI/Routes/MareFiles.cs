@@ -18,12 +18,16 @@ public class MareFiles
     public const string ServerFiles_Upload = "upload";
     public const string ServerFiles_UploadRaw = "uploadRaw";
     public const string ServerFiles_UploadMunged = "uploadMunged";
+    public const string ServerFiles_DownloadServers = "downloadServers";
 
     public const string Distribution = "/dist";
     public const string Distribution_Get = "get";
 
     public const string Main = "/main";
     public const string Main_SendReady = "sendReady";
+
+    public const string Speedtest = "/speedtest";
+    public const string Speedtest_Run = "run";
 
     public static Uri CacheGetFullPath(Uri baseUri, Guid requestId) => new(baseUri, Cache + "/" + Cache_Get + "?requestId=" + requestId.ToString());
 
@@ -38,8 +42,8 @@ public class MareFiles
     public static Uri ServerFilesUploadFullPath(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_Upload + "/" + hash);
     public static Uri ServerFilesUploadRawFullPath(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_UploadRaw + "/" + hash);
     public static Uri ServerFilesUploadMunged(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_UploadMunged + "/" + hash);
-
+    public static Uri ServerFilesGetDownloadServersFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_DownloadServers);
     public static Uri DistributionGetFullPath(Uri baseUri, string hash) => new(baseUri, Distribution + "/" + Distribution_Get + "?file=" + hash);
-
+    public static Uri SpeedtestRunFullPath(Uri baseUri) => new(baseUri, Speedtest + "/" + Speedtest_Run);
     public static Uri MainSendReadyFullPath(Uri baseUri, string uid, Guid request) => new(baseUri, Main + "/" + Main_SendReady + "/" + "?uid=" + uid + "&requestId=" + request.ToString());
 }

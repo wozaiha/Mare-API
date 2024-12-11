@@ -50,4 +50,6 @@ public interface IMareHubClient : IMareHub
     void OnUpdateUserIndividualPairStatusDto(Action<UserIndividualPairStatusDto> act);
 
     void OnGroupChangeUserPairPermissions(Action<GroupPairUserPermissionDto> act);
+
+    void OnUserApplyMoodlesByStatus(Action<ApplyMoodlesByStatusDto> act);
 }

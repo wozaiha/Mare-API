@@ -4,4 +4,4 @@ using MessagePack;
 namespace MareSynchronos.API.Dto.User;
 
 [MessagePackObject(keyAsPropertyName: true)]
-public record ApplyMoodlesByStatusDto(UserData User, string Statuses, MoodlesIpcToggleType Type) : UserDto(User);
+public record ApplyMoodlesByStatusDto(UserData User, string Statuses) : UserDto(User);

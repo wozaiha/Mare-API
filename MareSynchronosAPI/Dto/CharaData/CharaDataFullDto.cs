@@ -13,6 +13,7 @@ public record CharaDataFullDto(string Id, UserData Uploader) : CharaDataDto(Id, 
     public string ManipulationData { get; set; } = string.Empty;
     public int DownloadCount { get; set; } = 0;
     public List<UserData> AllowedUsers { get; set; } = [];
+    public List<GroupData> AllowedGroups { get; set; } = [];
     public List<GamePathEntry> FileGamePaths { get; set; } = [];
     public List<GamePathEntry> FileSwaps { get; set; } = [];
     public List<GamePathEntry> OriginalFiles { get; set; } = [];

@@ -1,4 +1,5 @@
-﻿using MareSynchronos.API.Data.Enum;
+﻿using MareSynchronos.API.Data;
+using MareSynchronos.API.Data.Enum;
 using MareSynchronos.API.Dto;
 using MareSynchronos.API.Dto.CharaData;
 using MareSynchronos.API.Dto.Group;
@@ -35,6 +36,11 @@ public interface IMareHub
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
     Task Client_UserUpdateDefaultPermissions(DefaultPermissionsDto dto);
     Task Client_GroupChangeUserPairPermissions(GroupPairUserPermissionDto dto);
+    Task Client_GposeLobbyJoin(UserData userData);
+    Task Client_GposeLobbyLeave(UserData userData);
+    Task Client_GposeLobbyPushCharacterData(CharaDataDownloadDto charaDownloadDto);
+    Task Client_GposeLobbyPushPoseData(UserData userData, PoseData poseData);
+    Task Client_GposeLobbyPushWorldData(UserData userData, WorldData worldData);
 
     Task<ConnectionDto> GetConnectionDto();
 
@@ -76,4 +82,11 @@ public interface IMareHub
     Task<List<CharaDataFullDto>> CharaDataGetOwn();
     Task<List<CharaDataMetaInfoDto>> CharaDataGetShared();
     Task Client_UserApplyMoodlesByStatus(ApplyMoodlesByStatusDto dto);
+
+    Task<string> GposeLobbyCreate();
+    Task<List<UserData>> GposeLobbyJoin(string lobbyId);
+    Task<bool> GposeLobbyLeave();
+    Task GposeLobbyPushCharacterData(CharaDataDownloadDto charaDownloadDto);
+    Task GposeLobbyPushPoseData(PoseData poseData);
+    Task GposeLobbyPushWorldData(WorldData worldData);
 }

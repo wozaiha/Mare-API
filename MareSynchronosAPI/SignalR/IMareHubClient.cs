@@ -1,5 +1,7 @@
-﻿using MareSynchronos.API.Data.Enum;
+﻿using MareSynchronos.API.Data;
+using MareSynchronos.API.Data.Enum;
 using MareSynchronos.API.Dto;
+using MareSynchronos.API.Dto.CharaData;
 using MareSynchronos.API.Dto.Group;
 using MareSynchronos.API.Dto.User;
 
@@ -52,4 +54,9 @@ public interface IMareHubClient : IMareHub
     void OnGroupChangeUserPairPermissions(Action<GroupPairUserPermissionDto> act);
 
     void OnUserApplyMoodlesByStatus(Action<ApplyMoodlesByStatusDto> act);
+    void OnGposeLobbyJoin(Action<UserData> act);
+    void OnGposeLobbyLeave(Action<UserData> act);
+    void OnGposeLobbyPushCharacterData(Action<CharaDataDownloadDto> act);
+    void OnGposeLobbyPushPoseData(Action<UserData, PoseData> act);
+    void OnGposeLobbyPushWorldData(Action<UserData, WorldData> act);
 }

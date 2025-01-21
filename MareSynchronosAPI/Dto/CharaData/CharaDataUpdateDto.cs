@@ -10,6 +10,7 @@ public record CharaDataUpdateDto(string Id)
     public string? GlamourerData { get; set; }
     public string? CustomizeData { get; set; }
     public string? ManipulationData { get; set; }
+    public string? MoodlesData { get; set; } = string.Empty;
     public List<string>? AllowedUsers { get; set; }
     public List<string>? AllowedGroups { get; set; }
     public List<GamePathEntry>? FileGamePaths { get; set; }

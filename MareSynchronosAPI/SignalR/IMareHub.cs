@@ -82,6 +82,7 @@ public interface IMareHub
     Task<List<CharaDataFullDto>> CharaDataGetOwn();
     Task<List<CharaDataMetaInfoDto>> CharaDataGetShared();
     Task Client_UserApplyMoodlesByStatus(ApplyMoodlesByStatusDto dto);
+    Task<CharaDataFullDto?> CharaDataAttemptRestore(string id);
 
     Task<string> GposeLobbyCreate();
     Task<List<UserData>> GposeLobbyJoin(string lobbyId);

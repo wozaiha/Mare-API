@@ -42,6 +42,8 @@ public interface IMareHub
     Task Client_GposeLobbyPushPoseData(UserData userData, PoseData poseData);
     Task Client_GposeLobbyPushWorldData(UserData userData, WorldData worldData);
 
+    Task Client_UpdateSupporterList(SupporterDto supporterDto);
+
     Task<ConnectionDto> GetConnectionDto();
 
     Task GroupBanUser(GroupPairDto dto, string reason);

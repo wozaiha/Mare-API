@@ -60,4 +60,5 @@ public interface IMareHubClient : IMareHub
     void OnGposeLobbyPushPoseData(Action<UserData, PoseData> act);
     void OnGposeLobbyPushWorldData(Action<UserData, WorldData> act);
     void OnSupporterUpdate(Action<SupporterDto> act);
+    void OnReceiveGroupChat(Action<GroupChatDto> act);
 }

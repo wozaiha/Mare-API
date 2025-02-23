@@ -43,6 +43,7 @@ public interface IMareHub
     Task Client_GposeLobbyPushWorldData(UserData userData, WorldData worldData);
 
     Task Client_UpdateSupporterList(SupporterDto supporterDto);
+    Task Client_GroupChat(GroupChatDto groupChatDto);
 
     Task<ConnectionDto> GetConnectionDto();
 
@@ -92,4 +93,6 @@ public interface IMareHub
     Task GposeLobbyPushCharacterData(CharaDataDownloadDto charaDownloadDto);
     Task GposeLobbyPushPoseData(PoseData poseData);
     Task GposeLobbyPushWorldData(WorldData worldData);
+
+    Task GroupChatServer(GroupChatDto groupChatDto);
 }

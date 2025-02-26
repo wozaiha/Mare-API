@@ -16,7 +16,6 @@ public class MareFiles
     public const string ServerFiles_FilesSend = "filesSend";
     public const string ServerFiles_GetSizes = "getFileSizes";
     public const string ServerFiles_Upload = "upload";
-    public const string ServerFiles_UploadRaw = "uploadRaw";
     public const string ServerFiles_UploadMunged = "uploadMunged";
     public const string ServerFiles_DownloadServers = "downloadServers";
 
@@ -40,7 +39,6 @@ public class MareFiles
     public static Uri ServerFilesFilesSendFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_FilesSend);
     public static Uri ServerFilesGetSizesFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_GetSizes);
     public static Uri ServerFilesUploadFullPath(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_Upload + "/" + hash);
-    public static Uri ServerFilesUploadRawFullPath(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_UploadRaw + "/" + hash);
     public static Uri ServerFilesUploadMunged(Uri baseUri, string hash) => new(baseUri, ServerFiles + "/" + ServerFiles_UploadMunged + "/" + hash);
     public static Uri ServerFilesGetDownloadServersFullPath(Uri baseUri) => new(baseUri, ServerFiles + "/" + ServerFiles_DownloadServers);
     public static Uri DistributionGetFullPath(Uri baseUri, string hash) => new(baseUri, Distribution + "/" + Distribution_Get + "?file=" + hash);

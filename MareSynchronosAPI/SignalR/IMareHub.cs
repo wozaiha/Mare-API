@@ -95,4 +95,7 @@ public interface IMareHub
     Task GposeLobbyPushWorldData(WorldData worldData);
 
     Task GroupChatServer(GroupChatDto groupChatDto);
+
+    Task Client_MoodlesShare(MoodlesDto moodlesDto);
+    Task MoodlesShare(MoodlesDto moodlesDto);
 }

@@ -98,4 +98,7 @@ public interface IMareHub
 
     Task Client_MoodlesShare(MoodlesDto moodlesDto);
     Task MoodlesShare(MoodlesDto moodlesDto);
+
+    Task<bool> UpdatePFinder(PFinderDto pFinderDto);
+    Task<List<PFinderDto>> RefreshPfinderList(UserDto userDto);
 }

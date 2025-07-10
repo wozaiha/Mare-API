@@ -21,7 +21,7 @@ public record PFinderDto
     public UserData User { get; set; }
 
     public PFinderDto(Guid guid, DateTimeOffset startTime, DateTimeOffset endTime, DateTimeOffset lastUpdate, string title, string description, string tags,
-        bool isNSFW, bool open, GroupData group, UserData user, bool HasTempGroup, string? TempGroupPW)
+        bool isNSFW, bool open, GroupData group, UserData user, bool hasTempGroup, string? tempGroupPW)
     {
         Guid = guid;
         StartTime = startTime;
@@ -34,8 +34,8 @@ public record PFinderDto
         Open = open;
         Group = group;
         User = user;
-        HasTempGroup = HasTempGroup;
-        TempGroupPW = TempGroupPW;
+        HasTempGroup = hasTempGroup;
+        TempGroupPW = tempGroupPW;
     }
 
     public PFinderDto()

@@ -7,9 +7,9 @@ namespace MareSynchronos.API.Dto.Group;
 public record PFinderDto
 {
     public Guid Guid { get; set; }
-    public DateTime StartTime { get; set; }
-    public DateTime EndTime { get; set; }
-    public DateTime LastUpdate { get; set; }
+    public DateTimeOffset StartTime { get; set; }
+    public DateTimeOffset EndTime { get; set; }
+    public DateTimeOffset LastUpdate { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
     public string Tags { get; set; }
@@ -18,7 +18,7 @@ public record PFinderDto
     public GroupData Group { get; set; }
     public UserData User { get; set; }
 
-    public PFinderDto(Guid guid, DateTime startTime, DateTime endTime, DateTime lastUpdate, string title, string description, string tags,
+    public PFinderDto(Guid guid, DateTimeOffset startTime, DateTimeOffset endTime, DateTimeOffset lastUpdate, string title, string description, string tags,
         bool isNSFW, bool open, GroupData group, UserData user)
     {
         Guid = guid;

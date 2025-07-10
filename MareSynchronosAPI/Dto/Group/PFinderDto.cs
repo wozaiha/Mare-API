@@ -14,12 +14,14 @@ public record PFinderDto
     public string Description { get; set; }
     public string Tags { get; set; }
     public bool IsNSFW { get; set; }
+    public bool HasTempGroup { get; set; } = false;
+    public string? TempGroupPW { get; set; }
     public bool Open { get; set; }
     public GroupData Group { get; set; }
     public UserData User { get; set; }
 
     public PFinderDto(Guid guid, DateTimeOffset startTime, DateTimeOffset endTime, DateTimeOffset lastUpdate, string title, string description, string tags,
-        bool isNSFW, bool open, GroupData group, UserData user)
+        bool isNSFW, bool open, GroupData group, UserData user, bool HasTempGroup, string? TempGroupPW)
     {
         Guid = guid;
         StartTime = startTime;
@@ -32,6 +34,8 @@ public record PFinderDto
         Open = open;
         Group = group;
         User = user;
+        HasTempGroup = HasTempGroup;
+        TempGroupPW = TempGroupPW;
     }
 
     public PFinderDto()
@@ -47,6 +51,8 @@ public record PFinderDto
         Open = false;
         Group = new GroupData(string.Empty);
         User = new UserData(string.Empty);
+        HasTempGroup = false;
+        TempGroupPW = null;
     }
 
     public bool IsVaild()
@@ -59,6 +65,7 @@ public record PFinderDto
         if (string.IsNullOrEmpty(Description)) return false;
         if (string.IsNullOrEmpty(Group.GID)) return false;
         if (string.IsNullOrEmpty(User.UID)) return false;
+        if (HasTempGroup && string.IsNullOrEmpty(TempGroupPW)) return false;
         return true;
     }
 }

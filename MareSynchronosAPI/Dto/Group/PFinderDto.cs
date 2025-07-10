@@ -52,6 +52,7 @@ public record PFinderDto
     public bool IsVaild()
     {
         if (Guid == Guid.Empty) return false;
+        if (StartTime > DateTime.Now + TimeSpan.FromDays(3)) return false;
         if (EndTime < DateTime.Now) return false;
         if (StartTime + TimeSpan.FromDays(1) < EndTime || StartTime > EndTime) return false;
         if (string.IsNullOrEmpty(Title)) return false;

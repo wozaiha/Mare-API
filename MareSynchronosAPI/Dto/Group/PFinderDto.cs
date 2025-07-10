@@ -52,12 +52,11 @@ public record PFinderDto
     public bool IsVaild()
     {
         if (Guid == Guid.Empty) return false;
-        if (StartTime < DateTime.Now) return false;
+        if (StartTime > DateTime.Now) return false;
         if (EndTime < DateTime.Now) return false;
-        if (StartTime + TimeSpan.FromDays(7) > EndTime) return false;
+        if (StartTime + TimeSpan.FromDays(7) < EndTime || StartTime > EndTime) return false;
         if (string.IsNullOrEmpty(Title)) return false;
         if (string.IsNullOrEmpty(Description)) return false;
-        if (string.IsNullOrEmpty(Tags)) return false;
         if (string.IsNullOrEmpty(Group.GID)) return false;
         if (string.IsNullOrEmpty(User.UID)) return false;
         return true;

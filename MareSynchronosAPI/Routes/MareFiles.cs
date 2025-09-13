@@ -30,7 +30,7 @@ public class MareFiles
     public const string Speedtest_Run = "run";
 
     public static Uri CacheGetFullPath(Uri baseUri, Guid requestId) => new(baseUri, Cache + "/" + Cache_Get + "?requestId=" + requestId.ToString());
-    public static Uri CacheGetSingleFullPath(Uri baseUri, Guid requestId, string hash) => new(baseUri, Cache + "/" + Cache_Get_Single + "?requestId=" + requestId.ToString() + "&hash=" + hash);
+    public static Uri CacheGetSingleFullPath(Uri baseUri, string hash) => new(baseUri, Cache + "/" + Cache_Get_Single + "?hash=" + hash);
 
     public static Uri RequestCancelFullPath(Uri baseUri, Guid guid) => new Uri(baseUri, Request + "/" + Request_Cancel + "?requestId=" + guid.ToString());
     public static Uri RequestCheckQueueFullPath(Uri baseUri, Guid guid) => new Uri(baseUri, Request + "/" + Request_Check + "?requestId=" + guid.ToString());

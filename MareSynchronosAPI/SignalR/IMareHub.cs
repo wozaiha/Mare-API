@@ -44,6 +44,7 @@ public interface IMareHub
 
     Task Client_UpdateSupporterList(SupporterDto supporterDto);
     Task Client_GroupChat(GroupChatDto groupChatDto);
+    Task Client_SendLocationToClient(LocationDto locationDto);
 
     Task<ConnectionDto> GetConnectionDto();
 
@@ -101,4 +102,6 @@ public interface IMareHub
 
     Task<bool> UpdatePFinder(PFinderDto pFinderDto);
     Task<List<PFinderDto>> RefreshPFinderList(UserDto userDto);
+    Task UpdateLocation(LocationDto locationDto);
+    Task<List<LocationDto>> RequestLocationInfo();
 }

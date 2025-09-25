@@ -62,4 +62,5 @@ public interface IMareHubClient : IMareHub
     void OnSupporterUpdate(Action<SupporterDto> act);
     void OnReceiveGroupChat(Action<GroupChatDto> act);
     void OnMoodlesShare(Action<MoodlesDto> act);
+    void OnReciveLocation(Action<List<LocationDto>> act);
 }

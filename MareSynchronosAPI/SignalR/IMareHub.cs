@@ -102,6 +102,6 @@ public interface IMareHub
 
     Task<bool> UpdatePFinder(PFinderDto pFinderDto);
     Task<List<PFinderDto>> RefreshPFinderList(UserDto userDto);
-    Task UpdateLocation(LocationDto locationDto);
+    Task UpdateLocation(LocationDto locationDto, bool offline);
     Task<List<LocationDto>> RequestLocationInfo();
 }

@@ -29,6 +29,11 @@ public static class GroupPermissionsExtensions
         return perm.HasFlag(GroupPermissions.EnableChat);
     }
 
+    public static bool IsEnabledShareLocation(this GroupPermissions perm)
+    {
+        return perm.HasFlag(GroupPermissions.ShareLocation);
+    }
+
     public static void SetDisableInvites(this ref GroupPermissions perm, bool set)
     {
         if (set) perm |= GroupPermissions.DisableInvites;
@@ -57,5 +62,11 @@ public static class GroupPermissionsExtensions
     {
         if (set == true) perm |= GroupPermissions.EnableChat;
         else perm &= ~GroupPermissions.EnableChat;
+    }
+
+    public static void SetShareLocation(this ref GroupPermissions perm, bool? set)
+    {
+        if (set == true) perm |= GroupPermissions.ShareLocation;
+        else perm &= ~GroupPermissions.ShareLocation;
     }
 }

@@ -9,5 +9,4 @@ public enum GroupPermissions
     DisableInvites = 0x4,
     PreferDisableVFX = 0x8,
     EnableChat = 0x10,
-    ShareLocation = 0x20
 }

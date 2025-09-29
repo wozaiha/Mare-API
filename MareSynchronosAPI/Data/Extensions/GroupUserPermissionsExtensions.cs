@@ -24,6 +24,11 @@ public static class GroupUserPermissionsExtensions
         return perm.HasFlag(GroupUserPreferredPermissions.Paused);
     }
 
+    public static bool IsSharingLocatio(this GroupUserPreferredPermissions perm)
+    {
+        return perm.HasFlag(GroupUserPreferredPermissions.ShareLocation);
+    }
+
     public static void SetDisableAnimations(this ref GroupUserPreferredPermissions perm, bool set)
     {
         if (set) perm |= GroupUserPreferredPermissions.DisableAnimations;
@@ -46,5 +51,11 @@ public static class GroupUserPermissionsExtensions
     {
         if (set) perm |= GroupUserPreferredPermissions.Paused;
         else perm &= ~GroupUserPreferredPermissions.Paused;
+    }
+
+    public static void SetShareLocation(this ref GroupUserPreferredPermissions perm, bool set)
+    {
+        if (set) perm |= GroupUserPreferredPermissions.ShareLocation;
+        else perm &= ~GroupUserPreferredPermissions.ShareLocation;
     }
 }
